@@ -17,9 +17,29 @@ sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "S
 max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890")
 
 puts "Creating sample services..."
-house_cleaning_service = Service.create!(title: "House Cleaning", category: "House Cleaning Services", price: 1.5, description: "tidy up and clean households", user_id: sugi.id)
-massage_service = Service.create!(title: "Massage", category: "Massage and Wellness", price: 3.5, description: "Personal massage", user_id: sugi.id)
-plant_care_service = Service.create!(title: "Plant care", category: "Gardening and Landscaping", price: 0.5, description: "Water household plants", user_id: max.id)
+house_cleaning_service = Service.create!(
+  title: "Thorough House Cleaning for a Sparkling Home",
+  category: "House Cleaning Services",
+  price: 1.5,
+  description: "Deep cleaning for households, including dusting, vacuuming, and mopping. Perfect for a fresh start.",
+  user_id: sugi.id
+)
+
+massage_service = Service.create!(
+  title: "Relaxing Massage for Stress Relief and Wellness",
+  category: "Massage and Wellness",
+  price: 3.5,
+  description: "Personalized massage sessions to relieve tension and improve overall well-being in the comfort of your home.",
+  user_id: sugi.id
+)
+
+plant_care_service = Service.create!(
+  title: "Plant Care and Watering for Thriving Greenery",
+  category: "Gardening and Landscaping",
+  price: 0.5,
+  description: "Water and care for your household or garden plants to keep them healthy and vibrant.",
+  user_id: max.id
+)
 
 # Additional services
 services_data = [

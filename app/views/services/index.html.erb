@@ -1,28 +1,28 @@
-<div class="container mt-4">
+<div class="container mt-4" id="page-index">
+  <h1 class="text-center mb-4">Index page</h1>
   <form class="form-inline d-flex search-bar mt-5 mx-auto rounded-pill px-3 py-2" action="<%= services_path %>" method="get">
         <input class="form-control mr-sm-2 border-0 rounded-pill" type="search" name="query" placeholder="What do you need help with?" aria-label="Search">
         <button class="btn my-2 my-sm-0 rounded-pill ms-2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
+  </form>
 
   <!-- Filter form -->
-  <div class="card mb-4">
-    <div class="card-body">
-      <%= form_tag services_path, method: :get, class: "row g-3" do %>
-        <div class="col-md-4">
+  <div class="form-container mb-4">
+      <%= form_tag services_path, method: :get, class: "d-flex flex-row  justify-content-center g-3" do %>
+        <div class="category-filter mx-2">
           <%= select_tag :category,
               options_for_select(Service.distinct.pluck(:category), params[:category]),
               prompt: "Select Category",
-              class: "form-select" %>
+              class: "form-select rounded-pill  " %>
         </div>
-        <div class="col-md-4">
+        <div class="price-filter mx-2">
           <%= number_field_tag :max_price,
               params[:max_price],
-              class: "form-control",
+              class: "form-control rounded-pill  ",
               placeholder: "Maximum Price" %>
         </div>
-        <div class="col-md-4">
-          <%= submit_tag "Filter", class: "btn btn-primary" %>
-          <%= link_to "Clear", services_path, class: "btn btn-secondary ms-2" %>
+        <div class="buttons-filter d-flex flex-row mx-2">
+          <%= submit_tag "Filter", class: "btn btn-secondary rounded-pill " %>
+          <%= link_to "Clear", services_path, class: "btn btn-secondary rounded-pill ms-2" %>
         </div>
       <% end %>
     </div>
@@ -31,19 +31,23 @@
   <!-- Bootstrap grid system -->
   <div class="row justify-content-center">
     <% @services.each do |service| %>
-      <div class="col-8 mb-4">
+      <div class="col-8 mb-3">
         <%= link_to service_path(service), class: "text-decoration-none text-reset" do %>
-          <div class="card mb-3 d-flex align-items-left h-100">
-            <div class="card-body d-flex">
-              <div class="flex-grow-1">
-                <h5 class="card-title"><%= service.title %></h5>
+          <div class="service-card rounded-pill mb-3 d-flex align-items-center justify-content-between flex-row">
+              <!-- Image -->
+              <img class="rounded-circle card-img" src="https://avatars.githubusercontent.com/u/144155785?v=4" alt="<%= service.title %>">
+              <div class="card-info">
+                <h5 class="card-title pb-2"><%= service.title %></h5>
                 <p class="card-text"><%= service.description %></p>
-                <p class="card-text"><strong>Price: $<%= service.price %></strong></p>
+              </div>
+              <div class="card-price mx-3">
+                <p class="my-0"><span class="tag">Price:</span><br>$<%= service.price %></p>
+              </div>
+              <div class="card-location mx-3">
+                <p class="my-0"><span class="tag">Location:</span><br>Canggu</p>
               </div>
 
-              <!-- Image -->
-              <!--<img class="card-img-right" src="https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="<%= service.title %>" style="width: 50%; height: 50%; object-fit: fill;">-->
-            </div>
+                <button class="btn "></i>Request</button>
           </div>
         <% end %>
       </div>
