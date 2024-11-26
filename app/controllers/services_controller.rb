@@ -1,8 +1,15 @@
 class ServicesController < ApplicationController
+  def index
+    @services = Service.all
 
+    # Apply category filter if present
+    @services = @services.where(category: params[:category]) if params[:category].present?
 
-def show
-  @service = Service.find(params[:id])
-end
+    # Apply price filter if present
+    @services = @services.where("price <= ?", params[:max_price]) if params[:max_price].present?
+  end
 
+  def show
+    @service = Service.find(params[:id])
+  end
 end
