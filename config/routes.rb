@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :services, only: [:index, :show] 
   resources :users, only: [:show, :edit, :update]
 
-  get "/profile", to: "profiles#show"
+  get "/profile", to: "profiles#show", as: :profile
+  patch "/profile", to: "profiles#update", as: :update
+  
 end

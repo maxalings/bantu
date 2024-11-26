@@ -1,8 +1,8 @@
 
 <h3 class="text-center mb-5">Your Information</h3>
 
-<%= simple_form_for(@user) do |f| %>
-<div class="form-group">
+<%= simple_form_for(@user, url: profile_path, method: :patch) do |f| %>
+<div class="form-group ">
     <%= f.input :first_name, label: 'First Name', input_html: { class: 'form-control' } %>
 </div>
 
