@@ -8,6 +8,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :first_name, :last_name, presence: true
-  validates :phone_number, :numericality => true, :length => { :minimum => 8, :maximum => 15, :message => "The phone number should be numerical, only between 8 & 15 figures" }
+  validates :phone_number, :length =>
+  { :minimum => 8, :maximum => 15, 
+  :message => "The phone number should only between 8 & 15 figures" }
 
 end
