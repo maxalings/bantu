@@ -17,9 +17,9 @@ sugi = User.create!(email: "sugi@bantu.com", password: "1234567")
 max = User.create!(email: "max@bantu.com", password: "12345678")
 
 puts "Creating sample services..."
-house_cleaning_service = Service.create!(title: "House Cleaning", category: "Cleaning", price: 1.5, description: "tidy up and clean households", user_id: sugi.id)
-massage_service = Service.create!(title: "Massage", category: "Comfort", price: 3.5, description: "Personal massage", user_id: sugi.id)
-plant_care_service = Service.create!(title: "Plant care", category: "Gardening", price: 0.5, description: "Water houehold plants", user_id: max.id)
+house_cleaning_service = Service.create!(title: "House Cleaning", category: "House Cleaning Services", price: 1.5, description: "tidy up and clean households", user_id: sugi.id)
+massage_service = Service.create!(title: "Massage", category: "Massage and Wellness", price: 3.5, description: "Personal massage", user_id: sugi.id)
+plant_care_service = Service.create!(title: "Plant care", category: "Gardening and Landscaping", price: 0.5, description: "Water houehold plants", user_id: max.id)
 
 # status = ["accepted", "declined", "pending"]
 puts "Creating sample requests..."
