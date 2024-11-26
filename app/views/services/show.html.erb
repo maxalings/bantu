@@ -1,0 +1,18 @@
+
+<div class="align-content-center d-flex flex-column justify-content-center align-items-center mt-5">
+    <h1><%= @service.title %></h1>
+  <div class="m-5 d-flex">
+    <div class="p-4 border border-secondary rounded m-1">
+      <h4 class="text-capitalize"> Category > <%= @service.category %></h4>
+      <p>Price: <%= @service.price %> $</p>
+      <p class="fst-italic">Description: <%= @service.description %></p>
+    </div>
+    <div>
+       <h4 class="p-4 border rounded border-secondary m-1"><%= @service.user.email %></h4>
+    </div>
+  </div>
+    <div>
+      <button class="btn btn-primary m-2"><%= "Ask for this service"  %></button>
+      <button class="btn btn-secondary m-2"><%= "Cancel" %></button>
+    </div>
+</div>
