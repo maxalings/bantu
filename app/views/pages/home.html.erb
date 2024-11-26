@@ -2,23 +2,55 @@
 <div class="container w-1200px mt-5 mx-auto">
     <h1 class="text-center">Book trusted help <br> for home tasks</h1>
 
-    <form class="form-inline d-flex search-bar mt-5 mx-auto rounded-pill px-3 py-2">
-        <input class="form-control mr-sm-2 border-0 rounded-pill" type="search" placeholder="What do you need help with?" aria-label="Search">
+    <form class="form-inline d-flex search-bar mt-5 mx-auto rounded-pill px-3 py-2" action="<%= services_path %>" method="get">
+        <input class="form-control mr-sm-2 border-0 rounded-pill" type="search" name="query" placeholder="What do you need help with?" aria-label="Search">
         <button class="btn my-2 my-sm-0 rounded-pill ms-2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
     <div class="category-container d-flex mt-5 mx-auto">
-          <button class="btn  rounded-pill mx-4 my-3"><i class="fa-solid fa-droplet"></i>Pool Cleaning</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-spa"></i>Massage</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-tree"></i>Gardening</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-broom"></i>House Cleaning</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-utensils"></i> Cooking</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-baby"></i> Babysitting</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-tshirt"></i> Laundry</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-lightbulb"></i> Electrician</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-bone"></i>Pet Care</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-wrench"></i>Home Repair</button>
-          <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-car"></i>Car Detailing</button>
+        <%= link_to services_path(category: "Pool Cleaning and Maintenance"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-droplet"></i>Pool Cleaning</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Massage and Wellness"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-spa"></i>Massage</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Gardening and Landscaping"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-tree"></i>Gardening</button>
+        <% end %>
+
+        <%= link_to services_path(category: "House Cleaning Services"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-broom"></i>House Cleaning</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Catering and Cooking Services"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-utensils"></i>Cooking</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Babysitting and Childcare"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-baby"></i>Babysitting</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Laundry and Dry Cleaning"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-tshirt"></i>Laundry</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Electric and Plumbing"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-lightbulb"></i>Electrician</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Pet Care Services"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-bone"></i>Pet Care</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Home Repair and Handyman Services"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-wrench"></i>Home Repair</button>
+        <% end %>
+
+        <%= link_to services_path(category: "Car Detailing and Maintenance"), class: "text-decoration-none text-reset" do %>
+            <button class="btn rounded-pill mx-4 my-3"><i class="fa-solid fa-car"></i>Car Detailing</button>
+        <% end %>
     </div>
 
 </div>
