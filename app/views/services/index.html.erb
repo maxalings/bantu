@@ -1,22 +1,44 @@
 <div class="container mt-4">
-  <h1 class="text-center mb-4">Search Page</h1>
+  <h1 class="text-center mb-4">Index page</h1>
+
+  <!-- Filter form -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <%= form_tag services_path, method: :get, class: "row g-3" do %>
+        <div class="col-md-4">
+          <%= select_tag :category,
+              options_for_select(Service.distinct.pluck(:category), params[:category]),
+              prompt: "Select Category",
+              class: "form-select" %>
+        </div>
+        <div class="col-md-4">
+          <%= number_field_tag :max_price,
+              params[:max_price],
+              class: "form-control",
+              placeholder: "Maximum Price" %>
+        </div>
+        <div class="col-md-4">
+          <%= submit_tag "Filter", class: "btn btn-primary" %>
+          <%= link_to "Clear", services_path, class: "btn btn-secondary ms-2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
   <!-- Bootstrap grid system -->
   <div class="row justify-content-center">
     <% @services.each do |service| %>
       <div class="col-8 mb-4">
-        <div class="card mb-3 d-flex align-items-center h-100">
-          <div class="card-body d-flex align-items-center">
-            <!-- Card Text Content -->
+        <div class="card mb-3 d-flex align-items-left h-100">
+          <div class="card-body d-flex">
             <div class="flex-grow-1">
               <h5 class="card-title"><%= service.title %></h5>
               <p class="card-text"><%= service.description %></p>
               <p class="card-text"><strong>Price: $<%= service.price %></strong></p>
-              <p class="card-text"><small class="text-muted">Last updated <%= rand(1..60) %> mins ago</small></p>
             </div>
 
             <!-- Image -->
-            <img class="rounded-circle" src="https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="<%= service.title %>" style="width: 60px; height: 60px; object-fit: cover;">
+            <!--<img class="card-img-right" src="https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="<%= service.title %>" style="width: 50%; height: 50%; object-fit: fill;">-->
           </div>
         </div>
       </div>
