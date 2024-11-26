@@ -1,1 +1,32 @@
 // Specific CSS for your home-page
+.search-bar{
+  border: 2px solid $secondary-color;
+  width: 800px;
+  background-color: $almost-white;
+  button{
+    background-color: $secondary-color;
+    color: $almost-white;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+.category-container{
+  width: 850px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  .btn{
+    color:$primary-color;
+    background-color: $primary-light-color;
+    font-weight: 500;
+
+  }
+  i{
+    background-color: $primary-color;
+    padding: 8px;
+    border-radius: 50px;
+    color: $primary-light-color;
+    margin-right: 5px;
+  }
+}
