@@ -6,4 +6,10 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :first_name, :last_name, presence: true
+  validates :phone_number, :length =>
+  { :minimum => 8, :maximum => 15, 
+  :message => "The phone number should only between 8 & 15 figures" }
+
 end
