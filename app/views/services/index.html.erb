@@ -1,5 +1,9 @@
 <div class="container mt-4" id="page-index">
   <h1 class="text-center mb-4">Index page</h1>
+  <form class="form-inline d-flex search-bar mt-5 mx-auto rounded-pill px-3 py-2" action="<%= services_path %>" method="get">
+        <input class="form-control mr-sm-2 border-0 rounded-pill" type="search" name="query" placeholder="What do you need help with?" aria-label="Search">
+        <button class="btn my-2 my-sm-0 rounded-pill ms-2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
 
   <!-- Filter form -->
   <div class="form-container mb-4">

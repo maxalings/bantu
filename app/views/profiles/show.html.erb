@@ -1,0 +1,7 @@
+<div data-controller="toggle" class="container grid m-4">
+    <div class="row m-3 p-3">
+    <div data-toggle-target="view" class="col-6"><%= render 'view_info', user: @user %></div>
+    <div data-toggle-target="edit" class="col-6 d-none"><%= render 'edit_info', user: @user %></div>
+    <div class="col-6"><%= render 'requests', user: @user %> </div>
+    </div>
+</div>
