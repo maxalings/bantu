@@ -1,0 +1,30 @@
+<%= simple_form_for(@user) do |f| %>
+  <div class="form-group">
+    <%= f.input :first_name, label: 'First Name', input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :last_name, label: 'Last Name', input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :email, label: 'Email', input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :phone_number, label: 'Phone Number', input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :password, label: 'Password', input_html: { class: 'form-control', autocomplete: 'off' } %>
+    <small class="form-text text-muted">Leave blank to keep your current password</small>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :password_confirmation, label: 'Confirm Password', input_html: { class: 'form-control', autocomplete: 'off' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Update Information', class: 'btn btn-primary' %>
+  </div>
+<% end %>

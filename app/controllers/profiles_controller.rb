@@ -3,5 +3,5 @@ class ProfilesController < ApplicationController
     @user = current_user
     @requests = @user.requests
   end
-
+  
 end
