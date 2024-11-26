@@ -1,5 +1,4 @@
 class ServicesController < ApplicationController
-
   def index
     @services = Service.all
 
@@ -10,4 +9,7 @@ class ServicesController < ApplicationController
     @services = @services.where("price <= ?", params[:max_price]) if params[:max_price].present?
   end
 
+  def show
+    @service = Service.find(params[:id])
+  end
 end
