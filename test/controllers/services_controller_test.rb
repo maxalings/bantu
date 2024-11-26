@@ -1,7 +1,8 @@
 require "test_helper"
 
 class ServicesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+
+  def index
+    @services = Service.All
+  end
 end
