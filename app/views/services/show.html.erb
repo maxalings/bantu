@@ -12,14 +12,14 @@
   </div>
 <div class="d-flex flex-column p-4">
   <h2 class="almost-text">Interest about this service ?</h2>
+
 <%= simple_form_for([@service, @request]) do |f| %>
- 
   <%= f.input :description, as: :text, label: "Write a short description of your needs",
    placeholder: "e.g. details, specificities, address if needed... ", input_html: { rows: 10, cols: 40, class:"custom-textaera" } %>
- 
   <%= f.input :date, as: :string, label: "Select a date for this service to be done", input_html: { type: "date", required: true, class:"custom-textaera incentive-text" }, class:"custom-textaera"%>
  <div class="text-center">
- 
+    <%= f.input :duration, as: :float, label: "Select the duration you need it", input_html: { type: "number", step: 0.5, min: 0.5, placeholder: "e.g. 1.5 for 1 hour and 30mn", class:"custom-textaera incentive-text" }, class:"custom-textaera"%>
+ <div class="text-center">
   <%= f.submit "Send request", class:"btn req-btn rounded-pill" %>
  </div>
 <% end %>
