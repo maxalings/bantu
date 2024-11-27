@@ -35,9 +35,12 @@ class Service < ApplicationRecord
     "Window Cleaning"
   ]
 
-  validates :title, :price, :category, presence: true
+  validates :title, :price, :category, :address, presence: true
   validates :price, numericality: { greater_than: 0 }
   validates :title, length: { maximum: 50 }
   validates :description, length: { maximum: 1500 }
   validates :category, inclusion: { in: CATEGORIES, message: "%{value} is not a valid status" }
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
