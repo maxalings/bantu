@@ -1,7 +1,10 @@
 class RequestsController < ApplicationController
+  def index
+    @requests = Request.all
+  end
 
   def new
-    @request = Request.new()
+    @request = Request.new
   end
 
   def create
@@ -9,13 +12,13 @@ class RequestsController < ApplicationController
     if @request.save
       redirect_to services_path
     else
-      render :new, status: :unprocessable_entity 
+      render :new, status: :unprocessable_entity
       #need to work on error pop in, mandatory fields, stimulus for form
     end
   end
 
 
-  private 
+  private
   def request_params
     params.require(:request).permit(:description)
   end
