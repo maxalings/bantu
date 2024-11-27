@@ -7,10 +7,22 @@
         <h5 class="mb-0 text-secondary">
           <i class="fas fa-concierge-bell me-2"></i><%= request.service.category %>
         </h5>
-        <span class="badge <%= request.status == 'pending' ? 'bg-warning text-dark' : 'bg-success' %>">
+        <% if request.status == 'pending' %>
+          <span class="badge bg-warning text-dark">
           <%= request.status.capitalize %>
-        </span>
+          </span>
+        <% elsif request.status == 'accepted' %>
+          <span class="badge bg-success">
+          <%= request.status.capitalize %>
+          </span>
+          <% elsif request.status == 'declined' %>
+            <span class="badge bg-danger">
+            <%= request.status.capitalize %>
+          </span>
+          <% else %>
+          <% end %>
       </div>
+
       <div class="card-body">
         <p class="card-text mb-3">
           <%= request.description %>
@@ -40,11 +52,22 @@
                     <h6 class="fw-bold">Description:</h6>
                     <p><%= request.description %></p>
                   </div>
-                  <div class="mb-3">
+                 <div class="mb-3">
                     <h6 class="fw-bold">Status:</h6>
-                    <span class="badge <%= request.status == 'pending' ? 'bg-warning text-dark' : 'bg-success' %>">
-                      <%= request.status.capitalize %>
-                    </span>
+                    <% if request.status == 'pending' %>
+                      <span class="badge bg-warning text-dark">
+                        <%= request.status.capitalize %>
+                      </span>
+                    <% elsif request.status == 'accepted' %>
+                      <span class="badge bg-success">
+                        <%= request.status.capitalize %>
+                      </span>
+                    <% elsif request.status == 'declined' %>
+                      <span class="badge bg-danger">
+                        <%= request.status.capitalize %>
+                      </span>
+                    <% else %>
+                    <% end %>
                   </div>
                   <div>
                     <h6 class="fw-bold">Created At:</h6>
