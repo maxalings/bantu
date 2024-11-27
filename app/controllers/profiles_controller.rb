@@ -1,13 +1,20 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   def show
     @user = current_user
-    # @requests = @user.requests
+  end
+
+  def edit
+    @user = current_user
   end
 
   def update
     @user = current_user
-    @user.update(user_params)
-    redirect_to profile_path
+    if @user.update(user_params)
+      redirect_to profile_path, notice: 'Profile updated'
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
