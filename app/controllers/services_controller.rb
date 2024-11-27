@@ -13,11 +13,13 @@ class ServicesController < ApplicationController
 
     # The `geocoded` scope filters only flats with coordinates
   @markers = @services.geocoded.map do |service|
-    {
-      lat: service.latitude,
-      lng: service.longitude
-    }
+      {
+        lat: service.latitude,
+        lng: service.longitude
+      }
+    end
   end
+
 
   def show
     @service = Service.find(params[:id])
