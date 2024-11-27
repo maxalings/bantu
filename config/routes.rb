@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   end 
   resources :users, only: [:show, :edit, :update]
 
-
   get "/profile", to: "profiles#show", as: :profile
-  patch "/profile", to: "profiles#update", as: :update
+  get "/profile/edit", to: "profiles#edit", as: :edit_profile
+  patch "/profile", to: "profiles#update", as: :update_profile
   
+  get "/profile/change_password", to: "profiles#change_password", as: :change_password
+  patch "/profile/update_password", to: "profiles#update_password", as: :update_password
 end
