@@ -24,7 +24,8 @@ house_cleaning_service = Service.create!(
   category: "House Cleaning Services",
   price: 1.5,
   description: "Deep cleaning for households, including dusting, vacuuming, and mopping. Perfect for a fresh start.",
-  user_id: sugi.id
+  user_id: sugi.id,
+  address: "Jl. Pantai Berawa No.99, Canggu, Bali"
 )
 
 massage_service = Service.create!(
@@ -32,7 +33,8 @@ massage_service = Service.create!(
   category: "Massage and Wellness",
   price: 3.5,
   description: "Personalized massage sessions to relieve tension and improve overall well-being in the comfort of your home.",
-  user_id: sugi.id
+  user_id: sugi.id,
+  address: "Jl. Batu Bolong No.50, Canggu, Bali"
 )
 
 plant_care_service = Service.create!(
@@ -40,8 +42,28 @@ plant_care_service = Service.create!(
   category: "Gardening and Landscaping",
   price: 0.5,
   description: "Water and care for your household or garden plants to keep them healthy and vibrant.",
-  user_id: max.id
+  user_id: max.id,
+  address: "Jl. Pantai Pererenan No.28, Pererenan, Bali"
 )
+
+# Array of Bali addresses to randomly assign
+bali_addresses = [
+  "Jl. Raya Canggu No.123, Canggu, Bali",
+  "Jl. Pantai Batu Bolong No.88, Canggu, Bali",
+  "Jl. Pantai Berawa No.168, Canggu, Bali",
+  "Jl. Raya Semat No.55, Canggu, Bali",
+  "Jl. Pantai Pererenan No.77, Pererenan, Bali",
+  "Jl. Raya Kuta No.199, Kuta, Bali",
+  "Jl. Legian No.101, Kuta, Bali",
+  "Jl. Kayu Aya No.68, Seminyak, Bali",
+  "Jl. Petitenget No.45, Seminyak, Bali",
+  "Jl. Sunset Road No.88, Seminyak, Bali",
+  "Jl. Labuan Sait No.33, Uluwatu, Bali",
+  "Jl. Raya Uluwatu No.168, Uluwatu, Bali",
+  "Jl. Double Six No.66, Seminyak, Bali",
+  "Jl. Drupadi No.1, Seminyak, Bali",
+  "Jl. Raya Kedampang No.90, Uluwatu, Bali"
+]
 
 # Additional services
 services_data = [
@@ -133,6 +155,7 @@ services_data = [
 ]
 
 services_data.each do |service_data|
+  service_data[:address] = bali_addresses.sample
   Service.create!(service_data)
 end
 

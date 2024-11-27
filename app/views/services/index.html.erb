@@ -27,6 +27,12 @@
     </div>
   </div>
 
+  <%# map view (i hope) %>
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
   <!-- Bootstrap grid system -->
   <div class="row justify-content-center">
     <% @services.each do |service| %>
@@ -43,7 +49,7 @@
                 <p class="my-0"><span class="tag">Price:</span><br>$<%= service.price %></p>
               </div>
               <div class="card-location mx-3">
-                <p class="my-0"><span class="tag">Location:</span><br>Canggu</p>
+                <p class="my-0"><span class="tag">Location:</span><br><%= service.address %></p>
               </div>
 
                 <button class="btn "></i>Request</button>
