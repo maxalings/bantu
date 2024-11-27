@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   get "/dashboard", to: "workers#dashboard", as: :dashboard
 
-
   get "/profile", to: "profiles#show", as: :profile
-  patch "/profile", to: "profiles#update", as: :update
+  get "/profile/edit", to: "profiles#edit", as: :edit_profile
+  patch "/profile", to: "profiles#update", as: :update_profile
 
 end
