@@ -11,7 +11,7 @@ class ServicesController < ApplicationController
     @services = @services.where("price <= ?", params[:max_price]) if params[:max_price].present?
 
     # The `geocoded` scope filters only flats with coordinates
-  @markers = @services.geocoded.map do |service|
+    @markers = @services.geocoded.map do |service|
       {
         lat: service.latitude,
         lng: service.longitude
