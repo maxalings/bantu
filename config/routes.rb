@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :requests, only:[:create, :index]
   end
   resources :users, only: [:show, :edit, :update]
+  resources :workers, only: [:show, :edit, :update]
 
 
   get "/profile", to: "profiles#show", as: :profile
