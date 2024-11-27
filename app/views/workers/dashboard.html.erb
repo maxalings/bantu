@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="mt-3">Welcome to your dashboard</h1>
+  <button class="btn btn-primary mt-5">Add a new service</button>
+
+  <div class="row mt-5"> <!-- Appliquer g-3 ici -->
+    <div class="col me-3 p-3 section services-section">
+      <h2>Your services</h2>
+      <% @services.each  do |service| %>
+      <%= service.title %>
+      <% end %>
+    </div>
+    <div class="col ms-3 p-3 section requests-section">
+      <h2>Your requests</h2> <!-- Note: Modifié pour distinction -->
+    </div>
+  </div>
+</div>
+
+<%= @services %>

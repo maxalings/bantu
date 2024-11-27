@@ -1,7 +1,8 @@
 class WorkersController < ApplicationController
+  before_action :authenticate_user!
 
-  def show
+  def dashboard
     @user = current_user
-    @services = Service.where(user_id: @user.id)
+    @services = @user.services
   end
 end
