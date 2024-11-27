@@ -9,7 +9,8 @@ class RequestsController < ApplicationController
     if @request.save
       redirect_to services_path
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity 
+      #need to work on error pop in, mandatory fields, stimulus for form
     end
   end
 
