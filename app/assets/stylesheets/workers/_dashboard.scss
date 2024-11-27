@@ -6,7 +6,8 @@
   overflow: scroll;
 }
 
-.title-container{
+// Service section
+.title-services{
   height: 50px;
   background-color: $primary-light-color;
   color: $primary-color;
@@ -30,7 +31,7 @@
     font-size: 14px;
     margin: 0;
   }
-  span{
+  .tag{
     font-size: 14px;
     background-color: rgb(234, 234, 234);
     border-radius: 5px;
@@ -53,16 +54,16 @@
 }
 
 
+// Request section
 
-// <h2>Your services</h2>
-// <% @services.each  do |service| %>
-//   <div class="srvc-card border d-flex flex-row">
-//     <div class="card-info">
-//       <h3 class="srvc-title"><%= service.title %></h3>
-//       <span class="srvc-cateogry"><%= service.category %></span>
-//       <span class="srvc-price"><%= service.price %>
-//       <p class="srvc-description"><%= service.description %></p>
-//     </div>
-//     <button class="btn edit-btn">Edit</button>
-//   </div>
-// <% end %>
+.title-requests{
+  height: 50px;
+  background-color: $secondary-light-color;
+  color: $secondary-color;
+  text-align: center;
+  border-radius: 10px;
+  h2{
+    line-height: 50px;
+    font-weight: 700;
+  }
+}
