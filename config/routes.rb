@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :requests, only:[:create, :index]
   end
   resources :users, only: [:show, :edit, :update]
+  get "/dashboard", to: "workers#dashboard", as: :dashboard
 
   get "/profile", to: "profiles#show", as: :profile
   get "/profile/edit", to: "profiles#edit", as: :edit_profile
