@@ -53,7 +53,7 @@
                   <div>
                     <h6 class="fw-bold">Request Handled by:</h6>
                     <%# !! Need to assign the right worker to each request. %>
-                    <p>Sugi(as place holder)</p>
+                    <p><%= User.find(request.user_id).first_name%> <%= User.find(request.user_id).last_name%></p>
                   </div>
                 </div>
                 <div class="modal-footer bg-secondary bg-opacity-10 rounded-bottom">
