@@ -3,6 +3,10 @@ class RequestsController < ApplicationController
     @requests = Request.all
   end
 
+  def show
+    @request = Request.find[:id]
+    redirect_to request_path
+  end
 
 
   def new
