@@ -16,13 +16,12 @@ class RequestsController < ApplicationController
     @request.service = @service
     @request.user = current_user
     if @request.save
-      flash[:notice] = "ok"
+      flash[:notice] = "You request has been sent "
       redirect_to services_path
     else
       render "services/show", status: :unprocessable_entity 
     end
   end
-
 
   private
   def request_params
