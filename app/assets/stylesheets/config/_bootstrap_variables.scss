@@ -11,12 +11,13 @@ $body-bg:                $light-gray;
 $font-size-base:         1rem;
 
 // Colors
-$body-color: $gray;
-$primary:    $blue;
-$success:    $green;
+$body-color: $almost-black;
+$primary:    $primary-color;
+$secondary:    $secondary-color;
+$success:    $secondary-color;
 $info:       $yellow;
 $danger:     $red;
-$warning:    $orange;
+$warning:    $primary-color;
 
 // Buttons & inputs' radius
 $border-radius-sm:            .0625rem;
@@ -25,4 +26,9 @@ $border-radius-lg:            .25rem;
 $border-radius-xl:            .5rem;
 $border-radius-xxl:           1rem;
 
+
 // Override other variables below!
+$font-weight-light:           200;
+$font-weight-normal:          400;
+$font-weight-semibold:        500;
+$font-weight-bold:            900;

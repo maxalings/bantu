@@ -2,16 +2,37 @@ class Service < ApplicationRecord
   belongs_to :user
 
   CATEGORIES = [
-    "Pool Cleaning and Maintenance",
-    "Massage and Wellness",
-    "Gardening and Landscaping",
-    "House Cleaning Services",
-    "Pet Care Services",
-    "Home Repair and Handyman Services",
+    "Appliance Installation and Repair",
+    "Babysitting and Childcare",
     "Car Detailing and Maintenance",
-    "Personal Fitness Training",
+    "Catering and Cooking Services",
+    "Dog Walking and Training",
+    "Electric and Plumbing",
     "Event Services",
-    "Appliance Installation and Repair"
+    "Financial Planning and Tax Assistance",
+    "Gardening and Landscaping",
+    "Health Coaching and Nutrition Guidance",
+    "Home Repair and Handyman Services",
+    "House Cleaning Services",
+    "Interior Design and Home Staging",
+    "Laundry and Dry Cleaning",
+    "Legal and Notary Services",
+    "Massage and Wellness",
+    "Moving and Packing Services",
+    "Music and Art Lessons",
+    "Personal Fitness Training",
+    "Pet Care Services",
+    "Photography and Videography",
+    "Pool Cleaning and Maintenance",
+    "Private Tutoring and Education",
+    "Roofing and Gutter Services",
+    "Security and Surveillance Installation",
+    "Senior Care and Assistance",
+    "Sewing and Alterations",
+    "Tech Support and IT Services",
+    "Transportation and Driver Services",
+    "Waste Removal and Junk Hauling",
+    "Window Cleaning"
   ]
 
   validates :title, :price, :category, presence: true

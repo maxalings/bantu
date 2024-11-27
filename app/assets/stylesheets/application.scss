@@ -10,3 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/home";
+@import "pages/form";
+
+body{
+  background-color: $almost-white;
+}
