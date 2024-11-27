@@ -4,5 +4,7 @@ class WorkersController < ApplicationController
   def dashboard
     @user = current_user
     @services = @user.services
+    @requests = Request.joins(:service).where(services: { user_id: @user.id })
   end
+
 end

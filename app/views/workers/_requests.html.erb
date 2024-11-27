@@ -1,1 +1,18 @@
 <h2>Your requests</h2> <!-- Note: Modifié pour distinction -->
+
+<% @requests.each do |request| %>
+<br>
+<%= request.date.strftime("%d, %B %Y")%>
+<br>
+<%= request.service.user.first_name %>
+<%= request.service.user.last_name %>
+<br>
+<%= request.description %>
+<br>
+<%= request.duration %> hour(s)
+<br>
+<%= request.status %>
+<br>
+<% end  %>
+
+
