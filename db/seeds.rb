@@ -13,8 +13,10 @@ Service.destroy_all
 User.destroy_all
 
 puts "Creating sample users..."
-sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890")
-max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890")
+
+sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890", role: "worker")
+max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890", role: "worker")
+client = User.create!(email: "client@bantu.com", password: "1234567", first_name: "Client", last_name: "ngs", phone_number: "1234567890", role: "client")
 
 puts "Creating sample services..."
 house_cleaning_service = Service.create!(
@@ -135,6 +137,6 @@ services_data.each do |service_data|
 end
 
 puts "Creating sample requests..."
-Request.create!(status: "accepted", date: "2025-11-26", duration: 2.5, description: "Walk my dog for 2.5hr in the morning.", service_id: house_cleaning_service.id, user_id: sugi.id)
-Request.create!(status: "declined", date: "2025-12-05", duration: 1.5, description: "Clean my house this Friday.", service_id: massage_service.id, user_id: max.id)
-Request.create!(status: "pending", date: "2025-12-21", duration: 0.5, description: "Water my flowers", service_id: plant_care_service.id, user_id: sugi.id)
+Request.create!(status: "accepted", date: "2025-11-26", duration: 2.5, description: "Walk my dog for 2.5hr in the morning.", service_id: house_cleaning_service.id, user_id: client.id)
+Request.create!(status: "declined", date: "2025-12-05", duration: 1.5, description: "Clean my house this Friday.", service_id: massage_service.id, user_id: client.id)
+Request.create!(status: "pending", date: "2025-12-21", duration: 0.5, description: "Water my flowers", service_id: plant_care_service.id, user_id: client.id)
