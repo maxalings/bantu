@@ -1,0 +1,55 @@
+.req-btn{
+    border: none;
+    background-color: $secondary-color;
+    color: $almost-white;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 20px 5px 20px;
+    button.req-btn:hover, input.req-btn:hover{
+    background-color: $primary-light-color;
+    color: $almost-black ;
+    }
+}
+
+.b-btn {
+    border: none;
+    background-color: $primary-color;
+    color: $almost-white;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 20px 5px 20px;
+    button.req-btn:hover, input.req-btn:hover{
+    background-color: $primary-light-color;
+    color: $almost-black ;
+    }
+
+}
+
+.custom-textaera{
+    border-radius: 10px;
+    border: solid 2px rgba($almost-black, 0.1);
+    background-color: white;
+    font-style: italic;
+    color: rgba($almost-black, 0.3);
+
+}
+.custom-textaera::placeholder{
+    color: rgba($almost-black, 0.3);
+}
+
+
+
+.service-details{
+    border-radius: 10px;
+    border: solid 2px rgba($almost-black, 0.1);
+    background-color: white;
+    color: $almost-black ;
+    // font-style: italic;
+}
+
+
+.almost-text{
+    color: $almost-black;
+}
