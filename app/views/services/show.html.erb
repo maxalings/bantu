@@ -1,12 +1,25 @@
 
 <div class="align-content-center d-flex justify-content-center align-items-start mt-5 h-100">
-  <div class="d-flex flex-column p-4">
+  <div class="d-flex flex-column p-4 w-50">
+    <div class="service-details p-4 mb-4">
     <h1 class="p-1 almost-text "><%= @service.title %></h1>
       <h6 class="px-2 mb-3 text-capitalize almost-text"> Category > <%= @service.category %></h6>
-    <div class="service-details p-5">
-      <p>Price: <%= @service.price %> $</p>
-      <p >Description: <%= @service.description %></p>
-       <h4 class="p-1 m-1 almost-text"><%= @service.user.email %></h4>
+    <div class="service-details p-4 d-flex">
+      <div class="avatar-name-container">
+        <img class="avatar rounded-circle card-img" src="<%= asset_path("avatar.png")  %>" 
+        alt="House Cleaning">
+        <div class="d-flex mt-1">
+          <p class="almost-text me-2 highweight"><%= @service.user.first_name%></p>
+          <p class="almost-text highweight"><%= @service.user.last_name%></p>
+        </div>
+      </div>
+      <div class="pt-1">
+        <p><%= @service.description %></p>
+        <div class="text-end me-5 pt-4">
+        <p> Price<span class="highweight"> $ <%= @service.price %></span></p>
+    </div>
+        </div>
+      </div>
     </div>
       <%= link_to "back", services_path, class:"btn b-btn rounded-pill mt-4 mx-auto align-self-start" %>
   </div>
@@ -25,5 +38,3 @@
 <% end %>
 </div>
 </div>
-
-

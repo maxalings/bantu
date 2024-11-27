@@ -11,6 +11,16 @@
     color: $almost-black ;
     }
 }
+.avatar-name-container{
+    padding-right: 20px;
+    .avatar{
+        border: solid 1px rgba($almost-black, 0.4);
+    }
+}
+
+.highweight {
+font-weight: 650;
+}
 
 .b-btn {
     border: none;

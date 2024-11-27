@@ -13,6 +13,7 @@ Service.destroy_all
 User.destroy_all
 
 puts "Creating sample users..."
+
 sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890", role: "worker")
 max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890", role: "worker")
 client = User.create!(email: "client@bantu.com", password: "1234567", first_name: "Client", last_name: "ngs", phone_number: "1234567890", role: "client")
