@@ -1,7 +1,6 @@
 class ServicesController < ApplicationController
   def index
     @services = Service.all
-
     # Add this new search condition
     if params[:query].present?
       @services = @services.where("title ILIKE :query OR description ILIKE :query", query: "%#{params[:query]}%")
