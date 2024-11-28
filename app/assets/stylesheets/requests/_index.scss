@@ -1,0 +1,61 @@
+@import "model";
+
+.title{
+  font-weight: 700;
+}
+
+.cards{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.card{
+  border: 1px solid $light-grey;
+  border-radius: 20px;
+  background-color: transparent;
+  h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 5px;
+  }
+  .rqst-status{
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    .point{
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+    &.pending{
+      background-color: $primary-light-color;
+      color: $primary-color;
+      .point{
+        background-color: $primary-color;
+      }
+    }
+    &.accepted{
+      background-color: $secondary-light-color;
+      color: $secondary-color;
+      .point{
+        background-color: $secondary-color;
+      }
+    }
+    &.declined{
+      background-color: $light-red;
+      color: $dark-red;
+      .point{
+        background-color: $dark-red;
+      }
+    }
+  }
+  button{
+    background-color: $light-grey;
+    color: $dark-grey;
+    border-radius: 10px;
+    padding: 0px 15px;
+  }
+}
