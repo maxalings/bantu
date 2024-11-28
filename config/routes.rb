@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :services, only: [:index, :show] do
     resources :requests, only:[:create, :index]
   end
-  resources :workers
   resources :users, only: [:show, :edit, :update]
 
   get "/dashboard", to: "workers#dashboard", as: :dashboard 
