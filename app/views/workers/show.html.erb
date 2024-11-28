@@ -1,0 +1,33 @@
+<div class="container my-4 p-4 border rounded-3 shadow-sm bg-light text-center">
+  <!-- GitHub Profile Picture -->
+  <div class="mb-3">
+    <img
+      src="https://github.com/sugihenson.png"
+      alt="<%= @worker.first_name %>'s GitHub Profile Picture"
+      class="rounded-circle shadow-sm"
+      width="150"
+      height="150">
+  </div>
+
+  <!-- Worker Details -->
+  <h1 class="text-primary mb-3">
+    <%= @worker.first_name %> <%= @worker.last_name %>
+  </h1>
+
+  <p>
+    <strong>Phone number:</strong>
+    <% if @show_number %>
+      <span class="text-muted" style="filter: blur(4px);"> <%= @worker.phone_number %> </span>
+    <% else %>
+      <span class="text-muted"> <%= @worker.phone_number %> </span>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Email:</strong> <span class="text-muted"><%= @worker.email %></span>
+  </p>
+</div>
+
+<div class="my-3 text-center">
+  <%= link_to "Back", request.referrer || root_path, class: "btn btn-secondary" %>
+</div>

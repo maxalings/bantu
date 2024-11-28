@@ -14,10 +14,12 @@ Rails.application.routes.draw do
   end
   resources :workers
   resources :users, only: [:show, :edit, :update]
-  get "/dashboard", to: "workers#dashboard", as: :dashboard
+
+  get "/dashboard", to: "workers#dashboard", as: :dashboard 
 
   get "/profile", to: "profiles#show", as: :profile
   get "/profile/edit", to: "profiles#edit", as: :edit_profile
   patch "/profile", to: "profiles#update", as: :update_profile
 
+  resources :workers, only: [:show]
 end

@@ -1,4 +1,13 @@
-      <h2>Your services</h2>
-      <% @services.each  do |service| %>
-      <%= service.title %>
-      <% end %>
+<div class="title-services w-100 mb-3">
+  <h2 class="mb-4">Your services</h2>
+</div>
+<% @services.each  do |service| %>
+  <div class="srvc-card d-flex flex-row justify-content-between p-3 mb-3">
+    <div class="card-info text-start">
+      <h3 class="srvc-title"><%= service.title %></h3>
+      <span class="tag srvc-cateogry"><%= service.category %></span>
+      <span class="tag srvc-price"><%= service.price%>IDR / hour</span>
+    </div>
+    <button class="btn edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+  </div>
+<% end %>

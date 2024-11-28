@@ -1,5 +1,6 @@
 class Service < ApplicationRecord
   belongs_to :user
+  has_many :requests
 
   CATEGORIES = [
     "Appliance Installation and Repair",
