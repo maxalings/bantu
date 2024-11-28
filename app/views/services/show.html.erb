@@ -8,9 +8,9 @@
         <div class="avatar-name-container">
           <img class="avatar rounded-circle card-img" src="<%= asset_path("avatar.png")  %>" 
           alt="House Cleaning">
-          <div class="d-flex mt-1" >
-            <p class="almost-text me-2 highweight">
-              <%= link_to "#{@service.user.first_name}#{@service.user.last_name}", 
+          <div class="d-flex mt-1">
+            <p><%= link_to "#{@service.user.first_name}  #{@service.user.last_name}", 
+
               worker_path(@service.user), class: "worker-link"%></p>
           </div>
         </div>

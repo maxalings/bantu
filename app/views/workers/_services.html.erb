@@ -4,9 +4,9 @@
 <% @services.each do |service| %>
   <div class="srvc-card d-flex flex-row justify-content-between p-3 mb-3">
     <div class="card-info text-start">
-      <h3 class="srvc-title"><%= service.title %></h3>
       <span class="tag srvc-category"><%= service.category %></span>
       <span class="tag srvc-price"><%= service.price %> IDR / hour</span>
+      <h3 class="srvc-title mb-0 mt-2"><%= service.title %></h3>
     </div>
     <button class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#editServiceModal<%= service.id %>">
       <i class="fa-solid fa-pen-to-square"></i>
@@ -15,35 +15,35 @@
 
   <!-- Modal -->
   <div class="modal fade" id="editServiceModal<%= service.id %>" tabindex="-1" aria-labelledby="editServiceModalLabel<%= service.id %>" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editServiceModalLabel<%= service.id %>">Edit Service</h5>
+     <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 p-3">
+          <div class="modal-header rounded-4">
+          <h3 class="modal-title" id="editServiceModalLabel<%= service.id %>">Edit Service</h3>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <%= simple_form_for service, url: update_service_path(service), method: :patch, remote: true do |f| %>
             <%= f.input :title %>
-            
+
             <!-- Dropdown for category with default selection -->
-            <%= f.input :category, 
-                        collection: Service.pluck(:category).uniq, 
-                        prompt: "Select a category", 
+            <%= f.input :category,
+                        collection: Service.pluck(:category).uniq,
+                        prompt: "Select a category",
                         selected: service.category %>
-            
+
             <%= f.input :price %>
             <%= f.input :description %>
-            
-            <div class="modal-footer">
-              <%= f.submit 'Update Service', class: 'btn btn-primary' %>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= f.input :address, required: true, input_html: { placeholder: "Enter address" } %>
+
+            <div class="modal-footer p-0">
+              <%= f.submit 'Update', class: 'btn btn-edit w-100 m-0 p-2 btn-primary' %>
             </div>
           <% end %>
           <!-- Separate delete button outside the form -->
-          <%= button_to 'Delete Service', 
-                delete_service_path(service), 
-                method: :delete, 
-                class: 'btn btn-danger mt-2', 
+          <%= button_to 'Delete',
+                delete_service_path(service),
+                method: :delete,
+                class: 'btn btn-delete btn-danger w-100 mx-O my-2 p-2',
                 form: { data: { turbo_confirm: 'Are you sure?' } } %>
         </div>
       </div>

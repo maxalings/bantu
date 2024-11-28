@@ -1,1 +1,26 @@
-  <button class="btn btn-primary mt-5">Add a new service</button>
+<button class="btn btn-add rounded-4 mt-5" data-bs-toggle="modal" data-bs-target="#newServiceModal"><i class="fa-solid fa-plus"></i>Add a new service</button>
+
+<!-- New Service Modal -->
+<div class="modal fade" id="newServiceModal" tabindex="-1" aria-labelledby="newServiceModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 p-3">
+          <div class="modal-header rounded-4">
+        <h3 class="modal-title" id="newServiceModalLabel">Add New Service</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for Service.new, url: services_path, method: :post, remote: true, html: { id: 'new_service_form' } do |f| %>
+          <%= f.input :title %>
+          <%= f.input :category, collection: Service::CATEGORIES, prompt: "Select a category" %>
+          <%= f.input :price, as: :decimal, input_html: { min: 0, step: 0.01, id: 'service_price' } %>
+          <%= f.input :description %>
+          <%= f.input :address %>
+
+          <div class="modal-footer p-0">
+            <%= f.submit 'Save Service', class: 'btn btn-save w-100 mx-O my-2 p-2 btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

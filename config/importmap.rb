@@ -9,6 +9,8 @@ pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "mapbox-gl", to: "https://ga.jspm.io/npm:mapbox-gl@3.1.2/dist/mapbox-gl.js"
 pin "process", to: "https://ga.jspm.io/npm:@jspm/core@2.1.0/nodelibs/browser/process-production.js"
+pin "flatpickr", to: "https://ga.jspm.io/npm:flatpickr@4.6.13/dist/esm/index.js"
+pin "service_form_validation", to: "service_form_validation.js"
 pin "@mapbox/mapbox-gl-geocoder", to: "https://ga.jspm.io/npm:@mapbox/mapbox-gl-geocoder@5.0.0/lib/index.js"
 pin "#lib/client.js", to: "https://ga.jspm.io/npm:@mapbox/mapbox-sdk@0.13.7/lib/browser/browser-client.js"
 pin "@mapbox/fusspot", to: "https://ga.jspm.io/npm:@mapbox/fusspot@0.4.0/lib/index.js"
@@ -26,3 +28,4 @@ pin "subtag", to: "https://ga.jspm.io/npm:subtag@0.5.0/subtag.js"
 pin "suggestions", to: "https://ga.jspm.io/npm:suggestions@1.7.1/index.js"
 pin "xtend", to: "https://ga.jspm.io/npm:xtend@4.0.2/immutable.js"
 pin "favorites", to: "favorites.js"
+

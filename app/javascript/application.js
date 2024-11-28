@@ -5,3 +5,5 @@ import "@popperjs/core"
 import "bootstrap"
 import "@hotwired/stimulus"
 import 'favorites';
+import "service_form_validation";
+

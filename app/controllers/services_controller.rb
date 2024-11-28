@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @services = Service.all
     # Add this new search condition
@@ -24,5 +26,24 @@ class ServicesController < ApplicationController
   def show
     @service = Service.find(params[:id])
     @request = Request.new
+    @disabled_dates = Request.where(service_id: @service.id).pluck(:date).map { |d| d.strftime("%Y-%m-%d") }
+  end
+
+  def create
+    @service = current_user.services.build(service_params)
+    if @service.save
+      flash[:notice] = 'Service was successfully created.'
+      redirect_to dashboard_path
+    else
+      flash.now[:alert] = 'Failed to create service.'
+      render 'workers/dashboard', status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def service_params
+    params.require(:service).permit(:title, :category, :price, :description, :address)
   end
 end
+
