@@ -23,7 +23,7 @@ class RequestsController < ApplicationController
       flash[:notice] = "You request has been sent "
       redirect_to services_path
     else
-      render "services/show", status: :unprocessable_entity 
+      render "services/show", status: :unprocessable_entity
     end
   end
 
