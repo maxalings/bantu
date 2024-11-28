@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if resource.role == 'worker'
       dashboard_path # Redirect to the worker dashboard
+    else
+      root_path # Redirect to the client dashboard or a default dashboard for other roles
     end
-    root_path # Redirect to the client dashboard or a default dashboard for other roles
   end
 end
