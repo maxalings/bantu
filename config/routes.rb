@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   get "/profile/edit", to: "profiles#edit", as: :edit_profile
   patch "/profile", to: "profiles#update", as: :update_profile
 
+  resources :workers, only: [:show]
+
+  patch '/services/:id/update', to: 'workers#update_service', as: :update_service
+  delete '/services/:id/delete', to: 'workers#destroy_service', as: :delete_service
 end

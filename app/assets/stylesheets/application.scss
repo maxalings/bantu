@@ -15,10 +15,31 @@
 @import "services/show";
 @import "workers/index";
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+@import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
+
 body{
   background-color: $almost-white;
   padding: 0;
   margin: 0;
 }
 
-@import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
+
+
+/* Hover effect for the service card */
+.worker-service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.worker-service-card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering */
+}
+
+.worker-service-card .card-body {
+  transition: background-color 0.3s ease;
+}
+
+.worker-service-card:hover .card-body {
+  background-color: #f8f9fa; /* Slight background color change on hover */
+}
