@@ -10,7 +10,8 @@ export default class extends Controller {
 
   connect() {
     this.geocoder = new MapboxGeocoder({
-      accessToken: this.apiKeyValue
+      accessToken: this.apiKeyValue,
+      placeholder: "filter by location..."
     })
     this.geocoder.addTo(this.element)
     this.geocoder.on("result", event => this.#setInputValue(event))

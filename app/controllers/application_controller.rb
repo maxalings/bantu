@@ -9,5 +9,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone_number])
   end
 
-
+  # Add this method to redirect after sign in
+  def after_sign_in_path_for(resource)
+    if resource.role == 'worker'
+      dashboard_path # Redirect to the worker dashboard
+    else
+      root_path # Redirect to the client dashboard or a default dashboard for other roles
+    end
+  end
 end
