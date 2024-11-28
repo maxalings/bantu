@@ -14,7 +14,9 @@
 @import "pages/form";
 @import "services/show";
 @import "workers/index";
+@import "requests/index";
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+
 body{
   background-color: $almost-white;
   padding: 0;
