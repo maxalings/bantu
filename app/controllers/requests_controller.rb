@@ -29,18 +29,27 @@ class RequestsController < ApplicationController
   def accept
     @request = Request.find(params[:id])
     @request.status = 'accepted'
-    @request.save
-    redirect_to dashboard_path
+    if @request.save
+      flash[:notice] = "You have accepted the request!"
+      redirect_to dashboard_path
+    else
+      render "requests/show", status: :unprocessable_entity
+    end
   end
 
   def decline
     @request = Request.find(params[:id])
     @request.status = 'declined'
-    @request.save
-    redirect_to dashboard_path
+    if @request.save
+      flash[:alert] = "You have declined the request!"
+      redirect_to dashboard_path
+    else
+      render "requests/show", status: :unprocessable_entity
+    end
   end
 
   private
+
   def request_params
     params.require(:request).permit(:description, :date, :duration)
   end
