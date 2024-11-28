@@ -31,5 +31,7 @@ class ServicesController < ApplicationController
   def show
     @service = Service.find(params[:id])
     @request = Request.new
+    @disabled_dates = Request.where(service_id: @service.id).pluck(:date).map { |d| d.strftime("%Y-%m-%d") }
   end
 end
+
