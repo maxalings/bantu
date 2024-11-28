@@ -9,7 +9,7 @@ class WorkersController < ApplicationController
 
   def dashboard
     @user = current_user
-    @services = @user.services
+    @services = current_user.services.order(created_at: :desc)
     status_filter = params[:status] || "pending" # par défaut "pending"
     @requests = Request.joins(:service).where(services: { user_id: @user.id }, status: status_filter)
   end
@@ -29,6 +29,16 @@ class WorkersController < ApplicationController
       flash[:notice] = 'Service was successfully deleted.'
     else
       flash[:alert] = 'Failed to delete service.'
+    end
+    redirect_to dashboard_path
+  end
+
+  def create_service
+    @service = current_user.services.build(service_params)
+    if @service.save
+      flash[:notice] = 'Service was successfully created.'
+    else
+      flash[:alert] = 'Failed to create service.'
     end
     redirect_to dashboard_path
   end
