@@ -1,0 +1,16 @@
+.modal-dialog{
+  border: none;
+  .modal-header{
+    background-color: $primary-light-color;
+    color: $primary-color;
+  }
+  .modal-body{
+    background-color: transparent;
+    p{
+      margin: 0;
+    }
+  }
+  .client-info{
+    background-color: $light-grey;
+  }
+}

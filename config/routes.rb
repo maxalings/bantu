@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :services, only: [:index, :show] do
+  resources :services, only: [:index, :show, :create] do
     resources :requests, only:[:create, :index]
   end
   resources :users, only: [:show, :edit, :update]
@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   patch "/profile", to: "profiles#update", as: :update_profile
 
   resources :workers, only: [:show]
+
+  patch '/services/:id/update', to: 'workers#update_service', as: :update_service
+  delete '/services/:id/delete', to: 'workers#destroy_service', as: :delete_service
 end
