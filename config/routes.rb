@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update]
 
-  get "/dashboard", to: "workers#dashboard", as: :dashboard 
+  get "/dashboard", to: "workers#dashboard", as: :dashboard
 
   get "/profile", to: "profiles#show", as: :profile
   get "/profile/edit", to: "profiles#edit", as: :edit_profile
@@ -24,4 +24,7 @@ Rails.application.routes.draw do
 
   patch '/services/:id/update', to: 'workers#update_service', as: :update_service
   delete '/services/:id/delete', to: 'workers#destroy_service', as: :delete_service
+
+  post "/requests/:id/accept", to: "requests#accept", as: :accept_request
+  post "/requests/:id/decline", to: "requests#decline", as: :decline_request
 end
