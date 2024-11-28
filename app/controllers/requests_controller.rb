@@ -8,7 +8,6 @@ class RequestsController < ApplicationController
     redirect_to request_path
   end
 
-
   def new
     @request = Request.new
   end
@@ -25,6 +24,20 @@ class RequestsController < ApplicationController
     else
       render "services/show", status: :unprocessable_entity
     end
+  end
+
+  def accept
+    @request = Request.find(params[:id])
+    @request.status = 'accepted'
+    @request.save
+    redirect_to dashboard_path
+  end
+
+  def decline
+    @request = Request.find(params[:id])
+    @request.status = 'declined'
+    @request.save
+    redirect_to dashboard_path
   end
 
   private

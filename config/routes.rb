@@ -24,4 +24,7 @@ Rails.application.routes.draw do
 
   patch '/services/:id/update', to: 'workers#update_service', as: :update_service
   delete '/services/:id/delete', to: 'workers#destroy_service', as: :delete_service
+
+  post "/requests/:id/accept", to: "requests#accept", as: :accept_request
+  post "/requests/:id/decline", to: "requests#decline", as: :decline_request
 end

@@ -1,4 +1,4 @@
-<div class="title-requests w-100 mb-3" data-controller="requests">
+<div class="title-requests w-100 mb-3">
   <h2 class="mb-4">Your requests</h2>
 </div>
 
@@ -8,7 +8,7 @@
   <%= link_to "Declined", dashboard_path(status: "declined"), class: "btn rounded btn-danger #{'active' if params[:status] == 'declined'}" %>
 </div>
 
-<div class="requests">
+<div class="requests" data-controller="requests">
   <% @requests.each do |request| %>
     <div class="srvc-card d-flex flex-row justify-content-between p-3 mb-3">
       <div class="card-info text-start">
@@ -17,8 +17,9 @@
         <p><strong>Request duration:</strong> <%= request.duration %> hour(s)</p>
         <% if request.status == "pending" %>
         <div class="justify-content-space-between text-center">
-          <button class="btn rounded btn-success" data-action="click->requests#accept" data-requests-target="acceptbutton">Accept</button>
-          <button class="btn rounded btn-danger" data-action="click->requests#decline"data-requests-target="declinebutton">Decline</button>
+          <%= link_to 'accept', accept_request_path(request), data: { turbo_method: :post }, class: "btn rounded btn-success" %>
+          <%= link_to 'decline', decline_request_path(request), data: { turbo_method: :post }, class: "btn rounded btn-danger" %>
+          <%# <button class="btn rounded btn-danger">Decline</button> %>
         </div>
         <% else %>
         <% end %>
