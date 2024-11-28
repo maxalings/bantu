@@ -33,6 +33,7 @@
             
             <%= f.input :price %>
             <%= f.input :description %>
+            <%= f.input :address, required: true, input_html: { placeholder: "Enter address" } %>
             
             <div class="modal-footer">
               <%= f.submit 'Update Service', class: 'btn btn-primary' %>
