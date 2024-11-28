@@ -48,21 +48,21 @@ plant_care_service = Service.create!(
 
 # Array of Bali addresses to randomly assign
 bali_addresses = [
-  "Jl. Raya Canggu No.123, Canggu, Bali",
-  "Jl. Pantai Batu Bolong No.88, Canggu, Bali",
-  "Jl. Pantai Berawa No.168, Canggu, Bali",
-  "Jl. Raya Semat No.55, Canggu, Bali",
-  "Jl. Pantai Pererenan No.77, Pererenan, Bali",
-  "Jl. Raya Kuta No.199, Kuta, Bali",
-  "Jl. Legian No.101, Kuta, Bali",
-  "Jl. Kayu Aya No.68, Seminyak, Bali",
-  "Jl. Petitenget No.45, Seminyak, Bali",
-  "Jl. Sunset Road No.88, Seminyak, Bali",
-  "Jl. Labuan Sait No.33, Uluwatu, Bali",
-  "Jl. Raya Uluwatu No.168, Uluwatu, Bali",
-  "Jl. Double Six No.66, Seminyak, Bali",
-  "Jl. Drupadi No.1, Seminyak, Bali",
-  "Jl. Raya Kedampang No.90, Uluwatu, Bali"
+  "Jalan Raya Canggu 123, Canggu, Kuta Utara, Badung, Bali 80351, Indonesia",
+  "Jalan Pantai Batu Bolong 88, Canggu, Kuta Utara, Badung, Bali 80351, Indonesia",
+  "Jalan Pantai Berawa 168, Canggu, Kuta Utara, Badung, Bali 80361, Indonesia",
+  "Jalan Raya Semat 55, Canggu, Kuta Utara, Badung, Bali 80361, Indonesia",
+  "Jalan Pantai Pererenan 77, Pererenan, Mengwi, Badung, Bali 80351, Indonesia",
+  "Jalan Raya Kuta 199, Kuta, Badung, Bali 80361, Indonesia",
+  "Jalan Legian 101, Kuta, Badung, Bali 80361, Indonesia",
+  "Jalan Kayu Aya 68, Seminyak, Kuta, Badung, Bali 80361, Indonesia",
+  "Jalan Petitenget 45, Seminyak, Kuta, Badung, Bali 80361, Indonesia",
+  "Jalan Sunset Road 88, Seminyak, Kuta, Badung, Bali 80361, Indonesia",
+  "Jalan Labuan Sait 33, Pecatu, Kuta Selatan, Badung, Bali 80364, Indonesia",
+  "Jalan Raya Uluwatu 168, Pecatu, Kuta Selatan, Badung, Bali 80364, Indonesia",
+  "Jalan Double Six 66, Seminyak, Kuta, Badung, Bali 80361, Indonesia",
+  "Jalan Drupadi 1, Seminyak, Kuta, Badung, Bali 80361, Indonesia",
+  "Jalan Raya Kedampang 90, Pecatu, Kuta Selatan, Badung, Bali 80364, Indonesia"
 ]
 
 # Additional services
