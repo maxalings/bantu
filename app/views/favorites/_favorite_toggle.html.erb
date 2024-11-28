@@ -1,0 +1,11 @@
+  <div>
+          <% if current_user.favorites.exists?(service_id: @service_id) %>
+            <%= link_to service_favorites_path(service), method: :create, class: "favorite-icon fav-shift" do %> 
+              <i class="fa-solid fa-heart fs-3"></i>
+            <% end %>
+          <% else %>
+            <%= link_to service_favorites_path(service), method: :delete, class: "favorite-icon fav-shift" do %> 
+            <i class="fa-regular fa-heart fs-3"></i>
+          <% end %>
+        <% end %>
+        </div>

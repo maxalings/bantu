@@ -2,7 +2,10 @@
 <div class="align-content-center d-flex justify-content-center align-items-start mt-5 h-100">
   <div class="d-flex flex-column p-4 w-50">
     <div class="service-details p-4 mb-4">
+      <div class="d-flex">
       <h1 class="p-1 almost-text "><%= @service.title %></h1>
+     <a href="#" class="favorite-icon fav-shift"><i class="fa-regular fa-heart fs-3"></i></a>
+      </div>
       <h6 class="px-2 mb-3 text-capitalize almost-text"> Category > <%= @service.category %></h6>
       <div class="service-details p-4 d-flex">
         <div class="avatar-name-container">

@@ -60,10 +60,9 @@
                 <button class="btn">Request</button>
           </div>
         <% end %>
-        <a href="#" class="favorite-icon">
-          <i class="fa-regular fa-heart fs-3"></i>
-        </a>
+      
       </div>
+          <%= render "favorites/favorite_toggle", service: service  %>
     <% end %>
   </div>
 </div>
