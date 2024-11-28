@@ -32,43 +32,35 @@
     <!-- Modal -->
 <div class="modal fade" id="infoModal-<%= request.id %>" tabindex="-1" aria-labelledby="infoModalLabel-<%= request.id %>" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-5">
-          <div class="modal-header bg-primary text-white rounded-top">
+        <div class="modal-content rounded-4 p-3">
+          <div class="modal-header rounded-4">
             <h5 class="modal-title" id="infoModalLabel-<%= request.id %>">
               <i class="fas fa-info-circle me-2"></i><%= request.service.category %>
             </h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body bg-light">
+          <div class="modal-body">
+            <div class="mb-3 d-flex flex-row align-items-center">
+              <h6 class="fw-bold my-0 me-2">Status:</h6>
+              <% if request.status == 'pending' %>
+                <div class="rqst-status rounded-pill pending d-flex align-items-center"><span class="point"></span><%= request.status.capitalize %></div>
+              <% elsif request.status == 'accepted' %>
+                <div class="rqst-status rounded-pill accepted d-flex align-items-center"><span class="point"></span><%= request.status.capitalize %></div>
+              <% elsif request.status == 'declined' %>
+                <div class="rqst-status rounded-pill declined d-flex align-items-center"><span class="point"></span><%= request.status.capitalize %></div>
+              <% end %>
+            </div>
+            <div class="mb-3 d-flex flex-row align-items-center">
+              <h6 class="fw-bold my-0 me-2">Created At:</h6>
+              <p><%= request.created_at.strftime("%B %d, %Y %I:%M %p") %></p>
+            </div>
             <div class="mb-3">
               <h6 class="fw-bold">Description:</h6>
               <p><%= request.description %></p>
             </div>
-            <div class="mb-3">
-              <h6 class="fw-bold">Status:</h6>
-              <% if request.status == 'pending' %>
-                <span class="badge bg-warning text-dark">
-                  <%= request.status.capitalize %>
-                </span>
-              <% elsif request.status == 'accepted' %>
-                <span class="badge bg-success">
-                  <%= request.status.capitalize %>
-                </span>
-              <% elsif request.status == 'declined' %>
-                <span class="badge bg-danger">
-                  <%= request.status.capitalize %>
-                </span>
-              <% else %>
-              <% end %>
-            </div>
-            <div>
-              <h6 class="fw-bold">Created At:</h6>
-              <p><%= request.created_at.strftime("%B %d, %Y %I:%M %p") %></p>
-            </div>
-            <div>
-              <h6 class="fw-bold">Request Handled by:</h6>
+            <div class="client-info rounded-4 p-3 mt-3 d-flex flex-row align-items-center">
               <%# add worker profile page to link to  %>
-              <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
+              <img class="avatar rounded-4 me-3" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
               <%=link_to "#{request.service.user.first_name} #{request.service.user.last_name}",
               worker_path(request.service.user)%>
             </div>
