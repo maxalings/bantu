@@ -60,7 +60,7 @@
             </div>
             <div class="client-info rounded-4 p-3 mt-3 d-flex flex-row align-items-center">
               <%# add worker profile page to link to  %>
-              <img class="avatar rounded-4 me-3" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
+              <img class="avatar rounded-4 me-3" src="<%= request.service.user.avatar %>">
               <%=link_to "#{request.service.user.first_name} #{request.service.user.last_name}",
               worker_path(request.service.user)%>
             </div>
