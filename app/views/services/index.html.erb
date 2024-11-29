@@ -45,7 +45,7 @@
         <%= link_to service_path(service), class: "text-decoration-none text-reset" do %>
           <div class="service-card rounded-4 p-2 mb-3 d-flex align-items-center justify-content-between flex-row">
               <!-- Image -->
-              <img class="rounded-4 card-img" src="https://www.thejakartapost.com/longforms/longform-gojek16mjg/skin/img/longform/gojek16mjg/gjkmjg01.jpg" alt="<%= service.title %>">
+              <img class="rounded-4 card-img" src="<%= service.user.avatar %>"  alt="<%= service.title %>">
               <div class="card-info">
                 <div class="d-flex align-items-center">
                 <h3 class="card-title pb-0"><%= service.title %></h3>

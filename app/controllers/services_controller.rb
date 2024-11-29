@@ -8,6 +8,8 @@ class ServicesController < ApplicationController
       @services = @services.where("title ILIKE :query OR description ILIKE :query", query: "%#{params[:query]}%")
     end
 
+    @user = current_user
+
     # Existing filters remain unchanged
     @services = @services.where(category: params[:category]) if params[:category].present?
     @services = @services.where("price <= ?", params[:max_price]) if params[:max_price].present?
@@ -46,4 +48,3 @@ class ServicesController < ApplicationController
     params.require(:service).permit(:title, :category, :price, :description, :address)
   end
 end
-
