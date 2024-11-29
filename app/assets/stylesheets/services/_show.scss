@@ -45,3 +45,7 @@
 .custom-textaera::placeholder{
     color: rgba($almost-black, 0.3);
 }
+
+#newServiceModal{
+  z-index: 999999999;
+}
