@@ -7,7 +7,8 @@ class WorkersController < ApplicationController
     @show_number = @worker.services
                           .map(&:requests)
                           .flatten
-                          .select { |item| item.user_id == current_user.id && item.status == "accepted" }
+                          .select { |request| request.user_id == current_user.id && request.status == "accepted" }
+                          .present?
   end
 
   def dashboard
