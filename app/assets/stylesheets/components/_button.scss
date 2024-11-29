@@ -18,6 +18,7 @@
 .btn-primary-opposite{
   color: $primary-color;
   background-color: $primary-light-color;
+  border: none;
   &:hover{
     background-color: $primary-color;
     color: $primary-light-color;

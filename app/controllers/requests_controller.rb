@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
   def index
     @requests = Request.all
+    @users = current_user
   end
 
   def show
