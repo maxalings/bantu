@@ -8,7 +8,7 @@
       </h1>
       <p class="m-0">
         <strong>Phone Number:</strong>
-        <% if @show_number != [] %>
+        <% if @show_number %>
           <span><%= @worker.phone_number %></span>
         <% else %>
           <span class="text-muted" style="filter: blur(4px);">********</span>
@@ -16,7 +16,7 @@
       </p>
       <p class="m-0">
         <strong>Email:</strong>
-        <% if @show_number != [] %>
+        <% if @show_number %>
           <span><%= @worker.email %></span>
         <% else %>
           <span class="text-muted" style="filter: blur(4px);">********</span>
