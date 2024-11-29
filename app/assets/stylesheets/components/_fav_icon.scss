@@ -24,6 +24,7 @@
   border-radius: 5px;
   font-size: 14px;
   color: #fff;
+  font-weight: 500;
   width: 100%;
   opacity: 0.9;
   font-weight: 400;
@@ -32,10 +33,10 @@
 
 /* linked to the favorites_controller.js depending on the type of the flash*/
 .flash-add {
-  background-color: #4b8e5b; 
+  background-color: $secondary-color; 
 }
 .flash-remove {
-  background-color: #8a5a3a;
+  background-color: $primary-color;
 }
 .flash-info {
   background-color: #17a2b8; 
@@ -49,3 +50,16 @@
   }
 }
 
+.fav-no-fav {
+  margin-top: 200px;
+}
+.no-fav-home{
+  margin-top: 40px;
+  border-radius: 15px;
+  padding: 3px 20px;
+  border: solid 3px $primary-color;
+}
+.home-fav-container{
+  margin-top: 40px;
+
+}
