@@ -11,12 +11,12 @@
         <%= f.select :category,
             options_for_select(Service.distinct.pluck(:category), params[:category]),
             { prompt: "Select Category" },
-            class: "form-select rounded-pill" %>
+            class: "form-select rounded-4" %>
       </div>
       <div class="price-filter mx-2">
         <%= f.number_field :max_price,
             value: params[:max_price],
-            class: "form-control rounded-pill",
+            class: "form-control rounded-4",
             placeholder: "Maximum Price" %>
       </div>
 
@@ -25,8 +25,8 @@
       </div>
 
       <div class="buttons-filter d-flex flex-row mx-2">
-        <%= f.submit "Filter", class: "btn btn-secondary rounded-pill" %>
-        <%= link_to "Clear", services_path, class: "btn btn-secondary rounded-pill ms-2" %>
+        <%= f.submit "Filter", class: "btn btn-primary-opposite" %>
+        <%= link_to "Clear", services_path, class: "btn btn-primary-opposite ms-2" %>
       </div>
     <% end %>
   </div>
