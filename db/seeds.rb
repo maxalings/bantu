@@ -14,9 +14,9 @@ User.destroy_all
 
 puts "Creating sample users..."
 
-sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890", role: "worker", avatar: 'https://res.cloudinary.com/ddj8cx0jk/image/upload/v1732848601/oic4lndhebzurvzrjbjw.heic')
-max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890", role: "worker", avatar: 'https://res.cloudinary.com/ddj8cx0jk/image/upload/v1732848601/oic4lndhebzurvzrjbjw.heic')
-client = User.create!(email: "client@bantu.com", password: "1234567", first_name: "Client", last_name: "ngs", phone_number: "1234567890", role: "client", avatar: 'https://res.cloudinary.com/ddj8cx0jk/image/upload/v1732848601/oic4lndhebzurvzrjbjw.heic')
+sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890", role: "worker", avatar: 'https://i.pravatar.cc/150?img=5')
+max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890", role: "worker", avatar: 'https://i.pravatar.cc/150?img=11')
+client = User.create!(email: "client@bantu.com", password: "1234567", first_name: "Client", last_name: "ngs", phone_number: "1234567890", role: "client", avatar: 'https://i.pravatar.cc/150?img=8')
 
 puts "Creating additional fake worker profiles..."
 
