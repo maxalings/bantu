@@ -1,6 +1,8 @@
 <h1 class="text-center m-5">Your Information</h1>
 
 <div class="profil-card rounded-4 bg-white p-4 text-center m-auto w-75">
+  <img class="rounded-4 my-3" src="<%=@user.avatar%>" alt="avatar" width="110" height="110">
+
   <div class="form-group d-flex justify-content-center">
   <label class="me-2">First Name:</label>
   <p><%= @user.first_name %></p>
