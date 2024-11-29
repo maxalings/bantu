@@ -14,10 +14,16 @@
 //   icon.classList.toggle('fa-solid');
 // }
 
-import { Controller } from "stimulus";
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static targets = ["icon"];
+
+  connect(){
+    console.log("it works?")
+
+  }
+  
 
   toggle(event) {
     event.preventDefault();
