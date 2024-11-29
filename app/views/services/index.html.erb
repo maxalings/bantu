@@ -1,4 +1,4 @@
-<div class="container mt-4" id="page-index">
+<div class="mt-4" id="page-index">
   <form class="form-inline d-flex search-bar mt-5 mx-auto rounded-pill px-3 py-2" action="<%= services_path %>" method="get">
         <input class="form-control mr-sm-2 border-0 rounded-pill" type="search" name="query" placeholder="What do you need help with?" aria-label="Search">
         <button class="btn my-2 my-sm-0 rounded-pill ms-2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -40,31 +40,28 @@
   </div>
 
   <!-- Bootstrap grid system -->
-  <div class="row justify-content-center">
+  <div class=" w-75 mx-auto d-flex flex-column">
     <% @services.each do |service| %>
-      <div class="col-8 mb-3">
         <%= link_to service_path(service), class: "text-decoration-none text-reset" do %>
-          <div class="service-card rounded-pill mb-3 d-flex align-items-center justify-content-between flex-row">
+          <div class="service-card rounded-4 p-2 mb-3 d-flex align-items-center justify-content-between flex-row">
               <!-- Image -->
-              <img class="rounded-circle card-img" src="https://www.thejakartapost.com/longforms/longform-gojek16mjg/skin/img/longform/gojek16mjg/gjkmjg01.jpg" alt="<%= service.title %>">
+              <img class="rounded-4 card-img" src="https://www.thejakartapost.com/longforms/longform-gojek16mjg/skin/img/longform/gojek16mjg/gjkmjg01.jpg" alt="<%= service.title %>">
               <div class="card-info">
-                <div class="d-flex">
-                <h5 class="card-title pb-2"><%= service.title %></h5>
-          <%= render "favorites/favorite_toggle", service: service  %>
+                <div class="d-flex align-items-center">
+                <h3 class="card-title pb-0"><%= service.title %></h3>
+                <%= render "favorites/favorite_toggle", service: service  %>
                 </div>
-                <p class="card-text fav-icon"><%= service.description %></p>
+                <p class="card-text m-0 fav-icon"><%= service.description %></p>
               </div>
               <div class="card-price mx-3">
-                <p class="my-0"><span class="tag">Price:</span><br>$<%= service.price %></p>
+                <p class="my-0"><span>Price:</span><br>$<%= service.price %></p>
               </div>
               <div class="card-location mx-3">
-                <p class="my-0"><span class="tag">Location:</span><br><%= service.address %></p>
+                <p class="my-0"><span>Location:</span><br><%= service.address %></p>
               </div>
-                <button class="btn">Request</button>
+                <button class="btn btn-grey btn-rsqt"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
         <% end %>
-      
-      </div>
     <% end %>
   </div>
 </div>
