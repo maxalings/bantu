@@ -14,35 +14,6 @@
   }
 }
 
-.req-btn{
-    border: none;
-    background-color: $secondary-color;
-    color: $almost-white;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 5px 20px 5px 20px;
-    &:hover{
-      background-color: $secondary-light-color;
-      color: $secondary-color ;
-      }
-}
-
-.b-btn {
-    border: none;
-    background-color: $primary-color;
-    color: $almost-white;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 5px 20px 5px 20px;
-    &:hover{
-    background-color: $primary-light-color;
-    color: $primary-color ;
-    }
-}
-
-
 .logsign-container{
     margin-top: 130px;
     color: $almost-black ;
@@ -60,7 +31,7 @@
 }
 
 .custom-textaera{
-    border-radius: 10px;
+    border-radius: 5px;
     border: solid 2px rgba($almost-black, 0.1);
     background-color: white;
     font-style: italic;
