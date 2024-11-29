@@ -1,3 +1,4 @@
+<div class="wishlist-container">
 <% if @favorites.any? %>
   <div class="w-75 mx-auto d-flex flex-column title">
     <% @favorites.each do |favorite| %>
@@ -20,9 +21,10 @@
           </div>
           <button class="btn btn-grey btn-rsqt"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-      <% end %> 
+      <% end %>
     <% end %>
   </div>
 <% else %>
   <p>You have no favorites yet.</p>
 <% end %>
+</div>

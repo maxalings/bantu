@@ -33,13 +33,13 @@
 
 /* linked to the favorites_controller.js depending on the type of the flash*/
 .flash-add {
-  background-color: $secondary-color; 
+  background-color: $secondary-color;
 }
 .flash-remove {
   background-color: $primary-color;
 }
 .flash-info {
-  background-color: #17a2b8; 
+  background-color: #17a2b8;
 }
 @keyframes fadeIn {
   from {
