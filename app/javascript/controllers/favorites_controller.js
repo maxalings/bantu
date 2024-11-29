@@ -38,8 +38,10 @@ export default class extends Controller {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         if (data.success) {
           if (data.action === "added") {
+            
             this.iconTarget.classList.add("fa-solid");
             this.iconTarget.classList.remove("fa-regular");
           } else if (data.action === "removed") {

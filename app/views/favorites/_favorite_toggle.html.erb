@@ -1,10 +1,10 @@
         <div> 
   <%=  link_to service_favorites_path(service), class: "favorite-icon fav-shift", 
-  data: { controller: "favorite", action: "click->favorite#toggle", url: service_favorites_path(service) } do %>
+  data: { controller: "favorites", action: "click->favorites#toggle", url: service_favorites_path(service) } do %>
     <% if current_user.favorites.exists?(service: service) %>
-      <i class="fa-solid fa-heart fs-3" data-favorite-target="icon"></i>
+      <i class="fa-solid fa-heart fs-3" data-favorites-target="icon"></i>
     <% else %>
-      <i class="fa-regular fa-heart fs-3" data-favorite-target="icon"></i>
+      <i class="fa-regular fa-heart fs-3" data-favorites-target="icon"></i>
     <% end %>
   <% end %>
 </div>
