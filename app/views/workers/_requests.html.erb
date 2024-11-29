@@ -3,9 +3,9 @@
 </div>
 
 <div class="btn-group mb-3 w-100" role="group">
-  <%= link_to "Pending", dashboard_path(status: "pending"), class: "btn rounded btn-primary #{'active' if params[:status] == 'pending' || params[:status].nil?}" %>
-  <%= link_to "Accepted", dashboard_path(status: "accepted"), class: "btn rounded mx-3 btn-success #{'active' if params[:status] == 'approved'}" %>
-  <%= link_to "Declined", dashboard_path(status: "declined"), class: "btn rounded btn-danger #{'active' if params[:status] == 'declined'}" %>
+  <%= link_to "Pending", dashboard_path(status: "pending"), class: "btn rounded-4 btn-primary #{'active' if params[:status] == 'pending' || params[:status].nil?}" %>
+  <%= link_to "Accepted", dashboard_path(status: "accepted"), class: "btn rounded-4 mx-3 btn-secondary #{'active' if params[:status] == 'approved'}" %>
+  <%= link_to "Declined", dashboard_path(status: "declined"), class: "btn rounded-4 btn-red #{'active' if params[:status] == 'declined'}" %>
 </div>
 
 <div class="requests" data-controller="requests">
