@@ -16,6 +16,6 @@ class User < ApplicationRecord
   # { :minimum => 8, :maximum => 15,
   # :message => "The phone number should only between 8 & 15 figures" }
 
-  validates :phone_number, format: { with: /\A\d+\z/, message: "only allows numbers" }, allow_blank: true
+
 
 end
