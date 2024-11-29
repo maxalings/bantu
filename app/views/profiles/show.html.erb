@@ -1,7 +1,11 @@
 <h1 class="text-center title">Your Information</h1>
 
 <div class="profil-card rounded-4 bg-white p-4 text-center m-auto w-75">
-  <img class="rounded-4 my-3" src="<%=@user.avatar%>" alt="avatar" width="110" height="110">
+  <% if current_user.avatar.present? %>
+    <img class="rounded-4 my-3" src="<%=@user.avatar%>" alt="avatar" width="110" height="110">
+  <% else %>
+    <%= image_tag "avatar", class:"rounded-4 my-3", alt: "text", width: "110", height: "110" %>
+  <% end %>
 
   <div class="form-group d-flex justify-content-center">
   <label class="me-2">First Name:</label>
