@@ -1,0 +1,32 @@
+<% if @favorites.any? %>
+<div class=" w-75 mx-auto d-flex flex-column"> </div>
+    <% @favorites.each do |favorite| %>
+        <%= link_to service_path(favorite.service), class: "text-decoration-none text-reset" do %>
+        <div class="service-card rounded-4 p-2 mb-3 d-flex align-items-center justify-content-between flex-row">
+            <img class="rounded-4 card-img" src="<%= favorite.service.user.avatar %>"  alt="<%= favorite.service.title %>">
+            <div class="card-info">
+                <div class="d-flex align-items-center">
+                    <h3 class="card-title pb-0"><%= favorite.service.title %></h3>
+                    <%= render "favorites/favorite_toggle", service: favorite.service  %>
+                </div>
+                <p class="card-text m-0 fav-icon"><%= favorite.service.description %></p>
+            </div>
+            <div class="card-price mx-3">
+                <p class="my-0"><span>Price:</span><br>$<%= favorite.service.price %></p>
+            </div>
+            <div class="card-location mx-3">
+                <p class="my-0"><span>Location:</span><br><%= favorite.service.address %></p>
+            </div>
+            <button class="btn btn-grey btn-rsqt"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <% end %> 
+    <% end %>
+</div>
+<% else %>
+<div class="fav-no-fav w-75 mx-auto d-flex flex-column text-center">
+  <h1>You have no favorite yet <br> Go get some !</h1>
+  <div>
+    <h1 class="home-fav-container"><%= link_to "Home", root_path, class:"text-decoration-none no-fav-home"%></h1>
+  </div>
+</div>
+    <% end %>
