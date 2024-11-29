@@ -37,8 +37,6 @@
 }
 
 .edit-btn{
-  background-color: $light-grey;
-  color: $dark-grey;
   border-radius: 5px;
   height: auto;
   font-weight: 500;
@@ -77,24 +75,7 @@ input{
   text-align: center;
 }
 .btn-edit{
-  color: $primary-light-color;
   font-weight: 700;
   text-transform: uppercase;
   border: none;
-  &:hover{
-    background-color: $primary-light-color;
-    color: $primary-color;
-  }
-}
-
-.btn-delete{
-  background-color: $dark-red;
-  color: $light-red;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  &:hover{
-    background-color: $light-red;
-    color: $dark-red;
-  }
 }

@@ -4,7 +4,10 @@ class WorkersController < ApplicationController
 
   def show
     @worker = User.find(params[:id])
-    @show_number = @worker.services.map(&:requests).flatten.any? { |r| r.user_id == current_user.id }
+    @show_number = @worker.services
+                          .map(&:requests)
+                          .flatten
+                          .select { |item| item.user_id == current_user.id && item.status == "accepted" }
   end
 
   def dashboard

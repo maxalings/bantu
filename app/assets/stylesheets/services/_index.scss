@@ -1,0 +1,14 @@
+.category-filter, .price-filter{
+  select{
+  color: $secondary-color;
+  font-weight: 500;
+  background-color: $secondary-light-color;
+  max-width: 200px;
+  }
+}
+.buttons-filter{
+  .btn{
+    color: $secondary-light-color;
+    font-weight: 500;
+  }
+}

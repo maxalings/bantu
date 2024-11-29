@@ -14,10 +14,34 @@ User.destroy_all
 
 puts "Creating sample users..."
 
-sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890", role: "worker", avatar: nil)
-max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890", role: "worker", avatar: nil)
-client = User.create!(email: "client@bantu.com", password: "1234567", first_name: "Client", last_name: "ngs", phone_number: "1234567890", role: "client", avatar: nil)
+sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890", role: "worker", avatar: 'https://i.pravatar.cc/150?img=5')
+max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890", role: "worker", avatar: 'https://i.pravatar.cc/150?img=11')
+client = User.create!(email: "client@bantu.com", password: "1234567", first_name: "Client", last_name: "ngs", phone_number: "1234567890", role: "client", avatar: 'https://i.pravatar.cc/150?img=8')
 
+puts "Creating additional fake worker profiles..."
+
+worker1 = User.create!(email: "worker1@bantu.com", password: "1234567", first_name: "John", last_name: "Doe", phone_number: "+12345678901", role: "worker", avatar: "https://i.pravatar.cc/150?img=1")
+worker2 = User.create!(email: "worker2@bantu.com", password: "1234567", first_name: "Jane", last_name: "Smith", phone_number: "+12345678902", role: "worker", avatar: "https://i.pravatar.cc/150?img=2")
+worker3 = User.create!(email: "worker3@bantu.com", password: "1234567", first_name: "Emily", last_name: "Johnson", phone_number: "+12345678903", role: "worker", avatar: "https://i.pravatar.cc/150?img=3")
+worker4 = User.create!(email: "worker4@bantu.com", password: "1234567", first_name: "Michael", last_name: "Brown", phone_number: "+12345678904", role: "worker", avatar: "https://i.pravatar.cc/150?img=4")
+worker5 = User.create!(email: "worker5@bantu.com", password: "1234567", first_name: "Sarah", last_name: "Davis", phone_number: "+12345678905", role: "worker", avatar: "https://i.pravatar.cc/150?img=5")
+worker6 = User.create!(email: "worker6@bantu.com", password: "1234567", first_name: "James", last_name: "Wilson", phone_number: "+12345678906", role: "worker", avatar: "https://i.pravatar.cc/150?img=6")
+worker7 = User.create!(email: "worker7@bantu.com", password: "1234567", first_name: "Jessica", last_name: "Taylor", phone_number: "+12345678907", role: "worker", avatar: "https://i.pravatar.cc/150?img=7")
+worker8 = User.create!(email: "worker8@bantu.com", password: "1234567", first_name: "David", last_name: "Anderson", phone_number: "+12345678908", role: "worker", avatar: "https://i.pravatar.cc/150?img=8")
+worker9 = User.create!(email: "worker9@bantu.com", password: "1234567", first_name: "Laura", last_name: "Thomas", phone_number: "+12345678909", role: "worker", avatar: "https://i.pravatar.cc/150?img=9")
+worker10 = User.create!(email: "worker10@bantu.com", password: "1234567", first_name: "Chris", last_name: "Moore", phone_number: "+12345678910", role: "worker", avatar: "https://i.pravatar.cc/150?img=10")
+worker11 = User.create!(email: "worker11@bantu.com", password: "1234567", first_name: "Rachel", last_name: "Martin", phone_number: "+12345678911", role: "worker", avatar: "https://i.pravatar.cc/150?img=11")
+worker12 = User.create!(email: "worker12@bantu.com", password: "1234567", first_name: "Daniel", last_name: "Harris", phone_number: "+12345678912", role: "worker", avatar: "https://i.pravatar.cc/150?img=12")
+worker13 = User.create!(email: "worker13@bantu.com", password: "1234567", first_name: "Sophia", last_name: "Clark", phone_number: "+12345678913", role: "worker", avatar: "https://i.pravatar.cc/150?img=13")
+worker14 = User.create!(email: "worker14@bantu.com", password: "1234567", first_name: "Andrew", last_name: "Lewis", phone_number: "+12345678914", role: "worker", avatar: "https://i.pravatar.cc/150?img=14")
+worker15 = User.create!(email: "worker15@bantu.com", password: "1234567", first_name: "Emma", last_name: "Walker", phone_number: "+12345678915", role: "worker", avatar: "https://i.pravatar.cc/150?img=15")
+worker16 = User.create!(email: "worker16@bantu.com", password: "1234567", first_name: "Ryan", last_name: "Hall", phone_number: "+12345678916", role: "worker", avatar: "https://i.pravatar.cc/150?img=16")
+worker17 = User.create!(email: "worker17@bantu.com", password: "1234567", first_name: "Olivia", last_name: "Allen", phone_number: "+12345678917", role: "worker", avatar: "https://i.pravatar.cc/150?img=17")
+worker18 = User.create!(email: "worker18@bantu.com", password: "1234567", first_name: "Nathan", last_name: "Young", phone_number: "+12345678918", role: "worker", avatar: "https://i.pravatar.cc/150?img=18")
+worker19 = User.create!(email: "worker19@bantu.com", password: "1234567", first_name: "Chloe", last_name: "King", phone_number: "+12345678919", role: "worker", avatar: "https://i.pravatar.cc/150?img=19")
+worker20 = User.create!(email: "worker20@bantu.com", password: "1234567", first_name: "Luke", last_name: "Scott", phone_number: "+12345678920", role: "worker", avatar: "https://i.pravatar.cc/150?img=20")
+
+puts "20 worker profiles created!"
 puts "Creating sample services..."
 house_cleaning_service = Service.create!(
   title: "Thorough House Cleaning for a Sparkling Home",
@@ -64,6 +88,9 @@ bali_addresses = [
   "Jalan Drupadi 1, Seminyak, Kuta, Badung, Bali 80361, Indonesia",
   "Jalan Raya Kedampang 90, Pecatu, Kuta Selatan, Badung, Bali 80364, Indonesia"
 ]
+
+# Array of worker IDs
+worker_ids = User.where(role: 'worker').pluck(:id)
 
 # Additional services
 services_data = [
@@ -154,7 +181,8 @@ services_data = [
   { title: "Water Heater Service", category: "Electric and Plumbing", price: 180.0, description: "Water heater maintenance and repair", user_id: max.id }
 ]
 
-services_data.each do |service_data|
+services_data.each_with_index do |service_data, index|
+  service_data[:user_id] = worker_ids[index % worker_ids.size] # Distribute user_id among workers
   service_data[:address] = bali_addresses.sample
   Service.create!(service_data)
 end

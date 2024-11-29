@@ -1,0 +1,54 @@
+.btn{
+  font-weight: 500;
+  border: none;
+  padding: 3px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.btn-primary{
+  color: $primary-light-color;
+  background-color: $primary-color;
+  &:hover{
+    background-color: $primary-light-color;
+    color: $primary-color;
+  }
+}
+
+.btn-secondary{
+  color: $secondary-light-color;
+  background-color: $secondary-color;
+  &:hover{
+    background-color: $secondary-light-color;
+    color: $secondary-color;
+  }
+}
+.btn-primary-big{
+  color: $primary-light-color;
+  background-color: $primary-color;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 50px;
+  &:hover{
+    background-color: $primary-light-color;
+    color: $primary-color;
+  }
+}
+
+.btn-grey{
+  background-color: $light-grey;
+  color: $dark-grey;
+  &:hover{
+    background-color: $light-grey;
+    color: $primary-color;
+  }
+}
+
+.btn-red{
+  background-color: $dark-red;
+  color: $light-red;
+  &:hover{
+    background-color: $light-red;
+    color: $dark-red;
+  }
+}

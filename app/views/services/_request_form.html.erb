@@ -19,8 +19,8 @@
         <div>
         <%= f.input :duration, as: :float, label: "Select the duration you need it", input_html: { type: "number", step: 0.5, min: 0.5, placeholder: "e.g. 1.5 for 1 hour and 30mn", class:"custom-textaera incentive-text" }, class:"custom-textaera"%>
         <div class="text-center">
-        <%= f.submit "Send request", class:"btn me-3 req-btn rounded-pill" %>
-        <%= link_to "back", services_path, class:"btn b-btn rounded-pill" %>
+        <%= f.submit "Send request", class:"btn btn-secondary me-3" %>
+        <%= link_to "Back", services_path, class:"btn btn-primary" %>
         </div>
     <% end %>
 <% else %>
