@@ -18,15 +18,22 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title"><%= request.service.title %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        <h5>Request Details</h5>
+        <p><strong>Request delivery time:</strong> <%= request.date.strftime("%d, %B %Y")%></p>
+        <p><strong>Request description:</strong> <%= request.description %></p>
+        <p><strong>Request duration:</strong> <%= request.duration %> hour(s)</p>
+        <br>
+        <h5>Client Details</h5>
+        <img class="rounded-4 card-img me-4" src="<%= request.user.avatar %>">
+        <p><strong>Client requested:</strong> <%= request.user.first_name%> <%= request.user.last_name%></p>
+        <p><strong>Client contact:</strong> <%= request.user.phone_number%></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
