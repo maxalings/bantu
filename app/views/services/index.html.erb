@@ -48,8 +48,11 @@
               <!-- Image -->
               <img class="rounded-circle card-img" src="https://www.thejakartapost.com/longforms/longform-gojek16mjg/skin/img/longform/gojek16mjg/gjkmjg01.jpg" alt="<%= service.title %>">
               <div class="card-info">
+                <div class="d-flex">
                 <h5 class="card-title pb-2"><%= service.title %></h5>
-                <p class="card-text"><%= service.description %></p>
+          <%= render "favorites/favorite_toggle", service: service  %>
+                </div>
+                <p class="card-text fav-icon"><%= service.description %></p>
               </div>
               <div class="card-price mx-3">
                 <p class="my-0"><span class="tag">Price:</span><br>$<%= service.price %></p>
@@ -60,9 +63,7 @@
                 <button class="btn">Request</button>
           </div>
         <% end %>
-        <a href="#" class="favorite-icon">
-          <i class="fa-regular fa-heart fs-3"></i>
-        </a>
+      
       </div>
     <% end %>
   </div>

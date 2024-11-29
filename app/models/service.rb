@@ -1,6 +1,8 @@
 class Service < ApplicationRecord
   belongs_to :user
   has_many :requests
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_services, through: :favorites, source: :service
 
   CATEGORIES = [
     "Appliance Installation and Repair",
