@@ -8,15 +8,19 @@
       </h1>
       <p class="m-0">
         <strong>Phone Number:</strong>
-        <% if @show_number %>
-          <span class="text-muted" style="filter: blur(4px);"><%= @worker.phone_number %></span>
+        <% if @show_number != [] %>
+          <span><%= @worker.phone_number %></span>
         <% else %>
-          <span class="text-muted"><%= @worker.phone_number %></span>
+          <span class="text-muted" style="filter: blur(4px);">********</span>
         <% end %>
       </p>
       <p class="m-0">
         <strong>Email:</strong>
-        <span class="text-muted"><%= @worker.email %></span>
+        <% if @show_number != [] %>
+          <span><%= @worker.email %></span>
+        <% else %>
+          <span class="text-muted" style="filter: blur(4px);">********</span>
+        <% end %>
       </p>
     </div>
     <%= link_to request.referrer || root_path, class: "btn btn-close btn-outline-secondary" do %>
