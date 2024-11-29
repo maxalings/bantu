@@ -1,3 +1,19 @@
+.srvc{
+  width: 500px;
+  box-shadow: $shadow;
+  border: none;
+  .srvc-profil{
+    background-color: $light-grey;
+  }
+  h3{
+    text-decoration: none;
+  }
+  .card-img{
+    width: 80px;
+    height: 80px;
+  }
+}
+
 .req-btn{
     border: none;
     background-color: $secondary-color;
@@ -6,20 +22,10 @@
     text-transform: uppercase;
     text-decoration: none;
     padding: 5px 20px 5px 20px;
-    button.req-btn:hover, input.req-btn:hover{
-    background-color: $primary-light-color;
-    color: $almost-black ;
-    }
-}
-.avatar-name-container{
-    padding-right: 20px;
-    .avatar{
-        border: solid 1px rgba($almost-black, 0.4);
-    }
-}
-
-.highweight {
-font-weight: 650;
+    &:hover{
+      background-color: $secondary-light-color;
+      color: $secondary-color ;
+      }
 }
 
 .b-btn {
@@ -30,20 +36,20 @@ font-weight: 650;
     text-transform: uppercase;
     text-decoration: none;
     padding: 5px 20px 5px 20px;
-    button.req-btn:hover, input.req-btn:hover{
+    &:hover{
     background-color: $primary-light-color;
-    color: $almost-black ;
+    color: $primary-color ;
     }
-
 }
+
 
 .logsign-container{
     margin-top: 130px;
     color: $almost-black ;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center;    
+    justify-content: center;
+    align-items: center;
     .logsign-btn{
         border: solid 1px rgba($almost-black, 0.3);
     }
@@ -52,21 +58,6 @@ font-weight: 650;
         color: $almost-white ;
     }
 }
-
-.notice {
-    background-color: #e7f5e8; 
-    color: #4CAF50;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    border: 1px solid #4CAF50;
-    padding-right: 3em;
-  }
-  .close {
-    padding: 0.25em 0,25em;
-    height: 0.3em;
-  }
 
 .custom-textaera{
     border-radius: 10px;
@@ -78,26 +69,4 @@ font-weight: 650;
 }
 .custom-textaera::placeholder{
     color: rgba($almost-black, 0.3);
-}
-
-
-
-.service-details{
-    border-radius: 10px;
-    border: solid 2px rgba($almost-black, 0.1);
-    background-color: white;
-    color: $almost-black ;
-    // font-style: italic;
-}
-
-
-.almost-text{
-    color: $almost-black;
-}
-
-
-.fav-shift{
-    margin-top: 18px ;
-    margin-left: 20px;
-    padding-right: 30px;
 }

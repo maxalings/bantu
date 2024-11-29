@@ -1,10 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+<div class="navbar rounded-pill mx-auto my-3 py-2 px-4 w-75 navbar-expand-sm navbar-lewagon">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "icon.png" %>
     <% end %>
-
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,7 +24,11 @@
           <% end %>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+              <% if current_user.avatar.present? %>
+                <%= cl_image_tag current_user.avatar, class: "avatar", alt: "User avatar" %>
+              <% else %>
+                <%= image_tag "avatar.png", class: "avatar", alt: "Default avatar" %>
+              <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", profile_path, class: "dropdown-item" %>
@@ -42,5 +43,4 @@
         <% end %>
       </ul>
     </div>
-  </div>
 </div>

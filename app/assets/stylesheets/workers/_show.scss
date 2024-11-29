@@ -1,0 +1,32 @@
+.profil-container{
+  width: 800px;
+  background-color: transparent;
+  box-shadow: $shadow;
+  height: 500px;
+  margin: 50px auto;
+  overflow: scroll;
+}
+
+.infos{
+  background-color: $light-grey;
+  border-radius: 15px;
+  width: auto;
+  position: relative;
+}
+
+.item{
+  background-color: $primary-light-color;
+  color: $primary-color;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.categories{
+  overflow: scroll;
+}
+
+.btn-close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

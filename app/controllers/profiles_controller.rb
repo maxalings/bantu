@@ -10,10 +10,17 @@ class ProfilesController < ApplicationController
 
   def update
     @user = current_user
+
+    if params[:user][:avatar].present?
+      uploaded_file = params[:user][:avatar]
+      cloudinary_file = Cloudinary::Uploader.upload(uploaded_file.tempfile.path)
+      @user.avatar = cloudinary_file['url']
+    end
+
     if @user.update(user_params)
-      redirect_to profile_path, notice: 'Profile updated'
+      redirect_to profile_path, notice: 'Profile updated successfully.'
     else
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
 
