@@ -1,0 +1,68 @@
+<div class="srvc-card d-flex flex-row justify-content-between p-3 mb-3" data-bs-toggle="modal" data-bs-target="#requestview">
+  <div class="card-info text-start">
+
+      <p><strong>Request delivery time:</strong> <%= request.date.strftime("%d, %B %Y")%></p>
+      <p><strong>Request description:</strong> <%= request.description %></p>
+      <p><strong>Request duration:</strong> <%= request.duration %> hour(s)</p>
+      <% if request.status == "pending" %>
+        <div class="justify-content-space-between text-center">
+          <%= link_to 'accept', accept_request_path(request), data: { turbo_method: :post }, class: "btn rounded btn-success" %>
+          <%= link_to 'decline', decline_request_path(request), data: { turbo_method: :post }, class: "btn rounded btn-danger" %>
+        </div>
+      <% end %>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="requestview" tabindex="-1" aria-labelledby="requestViewLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="requestViewLabel"><%= request.service.title %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <!-- Request Details -->
+        <h5><strong>Request Details</strong>
+        <% if request.status == 'pending' %>
+            <div class="rqst-status rounded-pill pending d-flex align-items-center"><span class="point"></span><%= request.status.capitalize %></div>
+        <% elsif request.status == 'accepted' %>
+            <div class="rqst-status rounded-pill accepted d-flex align-items-center"><span class="point"></span><%= request.status.capitalize %></div>
+        <% elsif request.status == 'declined' %>
+            <div class="rqst-status rounded-pill declined d-flex align-items-center"><span class="point"></span><%= request.status.capitalize %></div>
+        <% end %>
+        </h5>
+        <p><strong>Request delivery time:</strong> <%= request.date.strftime("%d, %B %Y") %></p>
+        <p><strong>Request description:</strong> <%= request.description %></p>
+        <p><strong>Request duration:</strong> <%= request.duration %> hour(s)</p>
+        <hr class="my-4">
+
+        <!-- Client Details -->
+        <h5><strong>Client Details</strong></h5>
+        <div class="d-flex align-items-center">
+          <img
+            src="<%= request.user.avatar %>"
+            class="rounded-4 card-img me-3"
+            alt="<%= request.user.first_name %> <%= request.user.last_name %>'s Avatar"
+            style="width: 60px; height: 60px; object-fit: cover;"
+          >
+          <div>
+            <p><strong>Client requested:</strong> <%= request.user.first_name %> <%= request.user.last_name %></p>
+            <p><strong>Client contact:</strong> <%= request.user.phone_number %></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

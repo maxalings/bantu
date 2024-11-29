@@ -1,0 +1,23 @@
+@import "show";
+
+#page-index{
+  margin-top: 150px;
+}
+select{
+  background-color: $light-grey;
+}
+
+.price-filter{
+  width: 180px;
+}
+
+.category-filter{
+  width: 250px;
+}
+
+.mapboxgl-ctrl-geocoder, #category, #max_price{
+  border-radius: 8px;
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid $dark-grey;
+}

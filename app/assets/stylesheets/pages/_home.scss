@@ -1,9 +1,14 @@
 // Specific CSS for your home-page
+
 .fullscreen-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.home-container{
+  margin-top: 150px;
 }
 
 .search-bar{
@@ -19,7 +24,7 @@
 }
 
 .category-container{
-  width: 850px;
+  width: 800px;
   margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
@@ -27,17 +32,19 @@
     color:$primary-color;
     background-color: $primary-light-color;
     font-weight: 500;
-
+    font-size: 16px;
   }
   i{
     background-color: $primary-color;
-    padding: 8px;
     border-radius: 50px;
     color: $primary-light-color;
     margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
   }
 }
 
-.fav-icon{
-  margin-left: 20px;
+#search-bar{
+  background-color: transparent;
 }

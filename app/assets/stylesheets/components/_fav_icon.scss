@@ -1,0 +1,51 @@
+.fav-icon{
+  margin-left: 10px;
+  border: none;
+  background: none;
+  .fa-heart{
+    color: $primary-color;
+    font-size: 18px;
+  }
+}
+
+#flash-container {
+  position: fixed;
+  bottom: 20px;  /* Position the container from the bottom */
+  right: 20px;   /* Position the container from the right */
+  z-index: 4000; /* Ensure it stays on top of other content */
+  display: flex;
+  flex-direction: column; /* Stack alerts vertically */
+  gap: 10px;  /* Space between each alert */
+  padding: 10px;
+}
+
+.flash {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+  opacity: 0.9;
+  font-weight: 400;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* linked to the favorites_controller.js depending on the type of the flash*/
+.flash-add {
+  background-color: #4b8e5b; 
+}
+.flash-remove {
+  background-color: #8a5a3a;
+}
+.flash-info {
+  background-color: #17a2b8; 
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+

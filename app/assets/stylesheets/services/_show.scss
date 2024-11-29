@@ -1,3 +1,7 @@
+.srvc-container{
+  margin-top: 150px;
+}
+
 .srvc{
   width: 500px;
   box-shadow: $shadow;
@@ -40,8 +44,4 @@
 }
 .custom-textaera::placeholder{
     color: rgba($almost-black, 0.3);
-}
-
-.fav-icon{
-  margin-left: 20px;
 }

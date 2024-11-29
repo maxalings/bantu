@@ -18,10 +18,7 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static targets = ["icon"];
-
   connect(){
-    console.log("it works?")
-
   }
   
 
@@ -44,14 +41,30 @@ export default class extends Controller {
             
             this.iconTarget.classList.add("fa-solid");
             this.iconTarget.classList.remove("fa-regular");
+            this.displayFlash(data.message, "add");
           } else if (data.action === "removed") {
             this.iconTarget.classList.add("fa-regular");
             this.iconTarget.classList.remove("fa-solid");
+            this.displayFlash(data.message, "remove");
           }
         } else {
           console.error(data.message);
         }
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        console.error("Error:", error);
+        this.displayFlash("An unexpected error occurred. Please try again later.", "error");
+      });
+  }
+
+  displayFlash(message, type) {
+    const flashDiv = document.createElement("div");
+    flashDiv.className = `flash flash-${type}`;
+    flashDiv.textContent = message;
+
+    const flashContainer = document.querySelector("#flash-container") || document.body;
+    flashContainer.appendChild(flashDiv);
+
+    setTimeout(() => flashDiv.remove(), 2000);
   }
 }
