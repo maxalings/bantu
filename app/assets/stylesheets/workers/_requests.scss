@@ -1,0 +1,32 @@
+.title-requests{
+  height: 50px;
+  background-color: $secondary-light-color;
+  color: $secondary-color;
+  text-align: center;
+  border-radius: 10px;
+  h2{
+    line-height: 50px;
+    font-weight: 700;
+  }
+}
+
+/* Add hover effect for the card */
+.srvc-card {
+  transition: transform 0.1s, box-shadow 0.1s;
+  cursor: pointer; /* Smooth transition for hover and click effects */
+}
+
+.rqst-info{
+  background-color: $light-grey;
+}
+.srvc-card:hover {
+  transform: translateY(-5px); /* Slightly lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Add click (active) effect for the card */
+.srvc-card:active {
+  transform: translateY(0); /* Move back to original position */
+  box-shadow: $shadow; /* Slightly reduce shadow */
+  transition: transform 0.1s, box-shadow 0.1s; /* Faster transition on click */
+}

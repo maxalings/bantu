@@ -13,6 +13,10 @@
     background-color: $primary-light-color;
     color: $primary-color;
   }
+  &.active{
+    background-color: $primary-light-color;
+    color: $primary-color;
+  }
 }
 
 .btn-primary-opposite{
@@ -32,7 +36,12 @@
     background-color: $secondary-light-color;
     color: $secondary-color;
   }
+  &.active{
+    background-color: $secondary-light-color;
+    color: $secondary-color;
+  }
 }
+
 .btn-primary-big{
   color: $primary-light-color;
   background-color: $primary-color;
@@ -58,6 +67,10 @@
   background-color: $dark-red;
   color: $light-red;
   &:hover{
+    background-color: $light-red;
+    color: $dark-red;
+  }
+  &.active{
     background-color: $light-red;
     color: $dark-red;
   }
