@@ -1,0 +1,13 @@
+<div class="srvc-card d-flex flex-row justify-content-between p-3 mb-3">
+  <div class="card-info text-start">
+    <p><strong>Request delivery time:</strong> <%= request.date.strftime("%d, %B %Y")%></p>
+    <p><strong>Request description:</strong> <%= request.description %></p>
+    <p><strong>Request duration:</strong> <%= request.duration %> hour(s)</p>
+    <% if request.status == "pending" %>
+      <div class="justify-content-space-between text-center">
+        <%= link_to 'accept', accept_request_path(request), data: { turbo_method: :post }, class: "btn rounded btn-success" %>
+        <%= link_to 'decline', decline_request_path(request), data: { turbo_method: :post }, class: "btn rounded btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>
