@@ -1,5 +1,5 @@
 <% if @favorites.any? %>
-<div class=" w-75 mx-auto d-flex flex-column"> </div>
+<div class="title w-75 mx-auto d-flex flex-column"> </div>
     <% @favorites.each do |favorite| %>
         <%= link_to service_path(favorite.service), class: "text-decoration-none text-reset" do %>
         <div class="service-card rounded-4 p-2 mb-3 d-flex align-items-center justify-content-between flex-row">
@@ -19,7 +19,7 @@
             </div>
             <button class="btn btn-grey btn-rsqt"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-        <% end %> 
+        <% end %>
     <% end %>
 </div>
 <% else %>
