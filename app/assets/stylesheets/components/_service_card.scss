@@ -1,31 +1,49 @@
   .service-card{
-    border: 2px solid $primary-color;
+    background-color: white;
+    box-shadow: $shadow;
     padding: 10px;
     border-radius: 20px;
-    max-height: 120px;
+    max-height: 150px;
+    .btn-rsqt{
+      font-size: 20px;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+    }
   }
 
   .card-img{
-    width: 100px;
-    height: auto;
-    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
   }
   .card-info{
     width: 450px;
     .card-title{
+    font-size: 18px;
     max-width: 450px;
     }
     .card-text{
       max-width: 450px;
+      font-size: 14px;
       overflow: hidden;
     }
   }
 
   .card-price, .card-location{
     text-align: center;
+    p{
+    font-size: 14px;
+    }
+    span{
+      text-transform: uppercase;
+      font-weight: 500;
+    }
   }
 
-  .tag{
-    text-transform: uppercase;
-    font-size: 14px;
+  .card-price{
+    width: 50px;
+  }
+  .card-location{
+    width: 250px;
   }
