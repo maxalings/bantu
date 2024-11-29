@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
+.fullscreen-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .search-bar{
   border: 2px solid $secondary-color;
   width: 800px;
