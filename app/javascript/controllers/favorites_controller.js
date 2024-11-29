@@ -41,11 +41,11 @@ export default class extends Controller {
             
             this.iconTarget.classList.add("fa-solid");
             this.iconTarget.classList.remove("fa-regular");
-            this.displayFlash(data.message);
+            this.displayFlash(data.message, "add");
           } else if (data.action === "removed") {
             this.iconTarget.classList.add("fa-regular");
             this.iconTarget.classList.remove("fa-solid");
-            this.displayFlash(data.message);
+            this.displayFlash(data.message, "remove");
           }
         } else {
           console.error(data.message);
@@ -58,16 +58,13 @@ export default class extends Controller {
   }
 
   displayFlash(message, type) {
-    // Use Rails flash-style notifications
     const flashDiv = document.createElement("div");
-    flashDiv.className = `flash flash-${type}`; // Apply CSS based on type (success, error, etc.)
+    flashDiv.className = `flash flash-${type}`;
     flashDiv.textContent = message;
 
-    // Add to the DOM (e.g., append to a specific container)
     const flashContainer = document.querySelector("#flash-container") || document.body;
     flashContainer.appendChild(flashDiv);
 
-    // Automatically remove the flash after 5 seconds
     setTimeout(() => flashDiv.remove(), 2000);
   }
 }
