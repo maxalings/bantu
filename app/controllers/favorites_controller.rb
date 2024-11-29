@@ -7,12 +7,12 @@ class FavoritesController < ApplicationController
     if favorite
       favorite.destroy
       flash.now[:alert] = "not added"
-      render json: { success: true, action: "removed" }
+      render json: { success: true, action: "removed", message: "Favorite removed successfully!"  }
     else
       favorite = current_user.favorites.build(service: @service)
       if favorite.save
         flash.now[:notice] = "added"
-        render json: { success: true, action: "added" }
+        render json: { success: true, action: "added", message: "Favorite added successfully!"  }
       else
         render json: { success: false, message: "Unable to update favorites" }, status: :unprocessable_entity
       end
