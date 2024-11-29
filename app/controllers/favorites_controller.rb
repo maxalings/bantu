@@ -1,20 +1,19 @@
 class FavoritesController < ApplicationController
-
+  before_action :authenticate_user!
   def create
     @service = Service.find(params[:service_id])
-    @favourite = current_user.Favorite.new
-    if @favourite.current_user.save = Favourite.new.current_user.service
-      flash[:notice] = "Favourites successfully added"
-    else 
-      flash[:alert] = "Unable to add service to favorites."
+    favorite = current_user.favorites.find_by(service: @service)
+
+    if favorite
+      favorite.destroy
+      render json: { success: true, action: "removed" }
+    else
+      favorite = current_user.favorites.build(service: @service)
+      if favorite.save
+        render json: { success: true, action: "added" }
+      else
+        render json: { success: false, message: "Unable to update favorites" }, status: :unprocessable_entity
+      end
     end
   end
-
-  # def destroy 
-  #   @service = Service.find(params[:service_id])
-  #   if @favourite.current_user.destroy
-  #     flash[:notice] = "Favourites successfully removed"
-  #   end
-  # end
-
 end
