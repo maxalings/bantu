@@ -18,10 +18,7 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static targets = ["icon"];
-
   connect(){
-    console.log("it works?")
-
   }
   
 
@@ -44,14 +41,33 @@ export default class extends Controller {
             
             this.iconTarget.classList.add("fa-solid");
             this.iconTarget.classList.remove("fa-regular");
+            this.displayFlash(data.message);
           } else if (data.action === "removed") {
             this.iconTarget.classList.add("fa-regular");
             this.iconTarget.classList.remove("fa-solid");
+            this.displayFlash(data.message);
           }
         } else {
           console.error(data.message);
         }
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        console.error("Error:", error);
+        this.displayFlash("An unexpected error occurred. Please try again later.", "error");
+      });
+  }
+
+  displayFlash(message, type) {
+    // Use Rails flash-style notifications
+    const flashDiv = document.createElement("div");
+    flashDiv.className = `flash flash-${type}`; // Apply CSS based on type (success, error, etc.)
+    flashDiv.textContent = message;
+
+    // Add to the DOM (e.g., append to a specific container)
+    const flashContainer = document.querySelector("#flash-container") || document.body;
+    flashContainer.appendChild(flashDiv);
+
+    // Automatically remove the flash after 5 seconds
+    setTimeout(() => flashDiv.remove(), 2000);
   }
 }
