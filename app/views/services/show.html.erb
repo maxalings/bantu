@@ -3,12 +3,12 @@
     <div class="srvc-infos d-flex">
       <p class="tag me-3"><%= @service.category %></p>
       <p class="tag"><%= @service.price %> IDR / hour</p>
+       <p class="fav-icon"><%= render "favorites/favorite_toggle", service: @service  %></p>
     </div>
     <h2 class="p-1 almost-text "><%= @service.title %></h2>
     <p><%= @service.description %></p>
     <div class="srvc-profil rounded-4 p-3 d-flex flex-row align-items-center">
-      <img class="rounded-4 card-img me-4" src="<%= asset_path("avatar.png")  %>"
-      alt="House Cleaning">
+      <img class="rounded-4 card-img me-4" src="<%= @service.user.avatar  %>">
       <div class="d-flex flex-column">
       <p class="text-uppercase fw-bolder mb-1">Service proposed by :</p>
       <h4><%= link_to "#{@service.user.first_name}  #{@service.user.last_name}",

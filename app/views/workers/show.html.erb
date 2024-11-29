@@ -1,7 +1,7 @@
 <div class="profil-container p-4 rounded-4">
   <!-- Worker Details -->
   <div class="infos d-flex justify-content-start py-3 px-4 align-items-center flex-row">
-    <img src="https://github.com/sugihenson.png" class="rounded-4 infos-left" alt="<%= @worker.first_name %> <%= @worker.last_name %>'s profile picture" width="110" height="110">
+    <%= cl_image_tag @worker.avatar, class: "rounded-4 infos-left", alt: "#{@worker.first_name} #{@worker.last_name}'s profile picture", width: 110, height: 110 %> 
     <div class="infos-right mx-2 px-3 text-start">
       <h1 class="mb-3">
         <%= @worker.first_name %> <%= @worker.last_name %>

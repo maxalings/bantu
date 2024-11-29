@@ -14,11 +14,11 @@ User.destroy_all
 
 puts "Creating sample users..."
 
-puts "Creating additional fake worker profiles..."
+sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890", role: "worker", avatar: 'https://res.cloudinary.com/ddj8cx0jk/image/upload/v1732848601/oic4lndhebzurvzrjbjw.heic')
+max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890", role: "worker", avatar: 'https://res.cloudinary.com/ddj8cx0jk/image/upload/v1732848601/oic4lndhebzurvzrjbjw.heic')
+client = User.create!(email: "client@bantu.com", password: "1234567", first_name: "Client", last_name: "ngs", phone_number: "1234567890", role: "client", avatar: 'https://res.cloudinary.com/ddj8cx0jk/image/upload/v1732848601/oic4lndhebzurvzrjbjw.heic')
 
-sugi = User.create!(email: "sugi@bantu.com", password: "1234567", first_name: "Sugi", last_name: "Henson", phone_number: "1234567890", role: "worker", avatar: nil)
-max = User.create!(email: "max@bantu.com", password: "12345678", first_name: "Max", last_name: "Alings", phone_number: "1234567890", role: "worker", avatar: nil)
-client = User.create!(email: "client@bantu.com", password: "1234567", first_name: "Client", last_name: "ngs", phone_number: "1234567890", role: "client", avatar: nil)
+puts "Creating additional fake worker profiles..."
 
 worker1 = User.create!(email: "worker1@bantu.com", password: "1234567", first_name: "John", last_name: "Doe", phone_number: "+12345678901", role: "worker", avatar: "https://i.pravatar.cc/150?img=1")
 worker2 = User.create!(email: "worker2@bantu.com", password: "1234567", first_name: "Jane", last_name: "Smith", phone_number: "+12345678902", role: "worker", avatar: "https://i.pravatar.cc/150?img=2")

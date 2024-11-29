@@ -15,6 +15,7 @@
 @import "services/show";
 @import "workers/index";
 @import "requests/index";
+@import "profiles/index";
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 @import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
 
@@ -24,7 +25,9 @@ body{
   margin: 0;
 }
 
-
+h1{
+  font-weight: 700;
+}
 
 /* Hover effect for the service card */
 .worker-service-card {
