@@ -1,14 +1,20 @@
-.category-filter, .price-filter{
-  select{
-  color: $secondary-color;
-  font-weight: 500;
-  background-color: $secondary-light-color;
-  max-width: 200px;
-  }
+@import "show";
+
+select{
+  background-color: $light-grey;
 }
-.buttons-filter{
-  .btn{
-    color: $secondary-light-color;
-    font-weight: 500;
-  }
+
+.price-filter{
+  width: 180px;
+}
+
+.category-filter{
+  width: 250px;
+}
+
+.mapboxgl-ctrl-geocoder, #category, #max_price{
+  border-radius: 8px;
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid $dark-grey;
 }
