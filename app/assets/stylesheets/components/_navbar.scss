@@ -12,6 +12,12 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-lewagon .navbar-brand {
   height: 40px;
+}
+
+.container-navbar{
+  position: fixed;
+  top: 0;
+  background-color: $almost-white;
 }
